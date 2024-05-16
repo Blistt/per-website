@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="flex flex-wrap items-center justify-between mx-auto p-8">
         <Link
           href="/"
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className="text-2xl md:text-3xl text-white font-semibold"
         >
           LOGO
         </Link>
