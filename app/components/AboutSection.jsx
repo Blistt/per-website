@@ -52,7 +52,15 @@ const AboutSection = () => {
     return (
         <section className='text-white'> 
             <div className="gap-8 items-center py-8 px-4 xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
-                <Image src="/images/fran-clean.png" width={200} height={200} />
+                <div className="rounded-full bg-[#181818] w-[300px] h-[300px] relative overflow-hidden">
+                    <Image
+                        src='/images/fran-clean.png'
+                        alt='hero image'
+                        className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+                        width={250}
+                        height={250}
+                    />
+                </div>
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
                     <p className="text-white texxt-base md:text-lg">
