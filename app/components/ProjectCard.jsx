@@ -1,16 +1,40 @@
-import React from 'react'
+import React from "react";
+import Image from "next/image";
+import { CodeBracketIcon, BookOpenIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
-const ProjectCard = ({ imgURL, title, description }) => {
+const ProjectCard = ({ imgUrl, title, description, blogUrl, gitUrl }) => {
   return (
     <div>
-        <div 
-            style={{ background: `url(${imgURL})`, backgroundSize: "cover"}}
-            className='h-52 md:h-72'
-        ></div>
-        <div classname='text-white'>
-            <h5>{title}</h5>
-            <p>{description}</p>
+      <div
+        className="group rounded-t-xl h-52 md:h-72 bg-center relative overflow-hidden"
+        src={imgUrl}
+        alt={title}
+        width={300}
+        height={200}
+        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
+      >
+        <div className="overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 items-center justify-center">
+          <Link
+            href={blogUrl}
+            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white mr-4 group/link"
+          >
+            <BookOpenIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+          </Link>
+          <a
+            href={gitUrl}
+            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+          </a>
         </div>
+      </div>
+      <div className="bg-[#181818] rounded-b-xl py-6 px-4 text-white">
+        <h5 className="font-lg font-semibold">{title}</h5>
+        <p className="text-[#ADB7BE]">{description}</p>
+      </div>
     </div>
   );
 };

@@ -4,32 +4,73 @@ import ProjectCard from './ProjectCard'
 const ProjectsData =[
   {
     id: 1,
-    title: 'Project 1',
-    description: 'This is a description of project 1',
-    image: '/images/project1.png',
-    link: 'https://www.google.com',
+    title: 'GAN Frame Interpolator',
+    description: 'Adds non-existent frames between two frames of an animation using Generative Adversarial Networks.',
+    image: '/images/gan-interpolator.png',
+    blog: 'https://www.google.com',
+    git: 'https://github.com/Blistt/Animation-GAN-InBetwener'
   },
   {
     id: 2,
-    title: 'Project 2',
-    description: 'This is a description of project 2',
-    image: '/images/project2.png',
-    link: 'https://www.google.com'
+    title: 'XGB Blood Pressure Predictor',
+    description: 'Predicts blood pressure levels from biometric data (from smartwatches) using XGBoost regressors.',
+    image: '/images/xgb-predictor.png',
+    blog: 'https://www.google.com',
+    git: 'https://github.com/Blistt'
   },
   {
     id: 3,
-    title: 'Project 3',
-    description: 'This is a description of project 3',
-    image: '/images/project3.png',
-    link: 'https://www.google.com'
+    title: 'Image Retrieval System',
+    description: 'Retrieves artistically similar images to a query image using deep learning embeddings.',
+    image: '/images/image-retrieval.png',
+    blog: 'https://www.google.com',
+    git: 'https://github.com/Blistt/vgg-image-retrieval'
+  },
+  {
+    id: 4,
+    title: 'Radio Music Recommender',
+    description: 'Tunes to a radio station playing the most musically similar song to a query song.',
+    image: '/images/music-rec2.png',
+    blog: 'https://www.google.com',
+    git: 'https://github.com/Blistt/wavebox'
+  },
+  {
+    id: 5,
+    title: 'Personality-based Recommender System',
+    description: 'Recommends movies and TV shows based on the user\'s personality traits combined with database ratings.',
+    image: '/images/personality-rec.png',
+    blog: 'https://www.google.com',
+    git: 'https://github.com/Blistt/Information-Retrieval-System-Synopses'
+  },
+  {
+    id: 6,
+    title: 'Synopsis-based Books & Movie Recommender',
+    description: 'Recommends books, movies and TV shows based on a query synopsis using classical NLP techniques and LLM embeddings',
+    image: '/images/synopsis-rec.png',
+    blog: 'https://www.google.com',
+    git: 'https://github.com/Blistt/Recommender-System-Personality'
   }
 ]
 
 const ProjectsSection = () => {
   return (
-    <h2>
-      My Projects 
-    </h2>
+    <>
+      <h2 className='text-center text-4xl font-bold text-white mt-4'>
+        My Projects 
+      </h2>
+      <div className='grid md:grid-cols-3 gap-8 md:gap-12 mt-4'>
+        {ProjectsData.map((project) => (
+          <ProjectCard 
+            key={project.id} 
+            title={project.title} 
+            description={project.description} 
+            imgUrl={project.image} 
+            blogUrl={project.blog}
+            gitUrl={project.git}
+          />
+        ))}
+      </div>
+    </>
   )
 }
 
