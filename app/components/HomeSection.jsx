@@ -65,11 +65,10 @@ const HomeSection = () => {
                     </h1>
                     <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                         <p className="text-white texxt-base md:text-lg">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut 
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                            sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            I'm an AI developer specialized in deep learning and computer vision. My projects have focused primarily in
+                            generative modeling and recommender systems. A mixed background in mathematics, psychology, and computer science
+                            allows me to approach problems with technical rigor without foregoing explainability. I leverage years of experience 
+                            as an academic researcher and a Machine Learning contractor and Statistical Research Analyst for industry. 
                         </p>
                         <div className='mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3'>
                         <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-950 via-purple-500 to-pink-300 hover:bg-slate-200 text-white'>

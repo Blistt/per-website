@@ -7,7 +7,7 @@ const ProjectsData =[
     title: 'GAN Frame Interpolator',
     description: 'Adds non-existent frames between two frames of an animation using Generative Adversarial Networks.',
     image: '/images/gan-interpolator.png',
-    blog: 'https://www.google.com',
+    blog: '/gan-interpolator',
     git: 'https://github.com/Blistt/Animation-GAN-InBetwener'
   },
   {
@@ -40,7 +40,7 @@ const ProjectsData =[
     description: 'Recommends movies and TV shows based on the user\'s personality traits combined with database ratings.',
     image: '/images/personality-rec.png',
     blog: 'https://www.google.com',
-    git: 'https://github.com/Blistt/Information-Retrieval-System-Synopses'
+    git: 'https://github.com/Blistt/Recommender-System-Personality'
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ const ProjectsData =[
     description: 'Recommends books, movies and TV shows based on a query synopsis using classical NLP techniques and LLM embeddings',
     image: '/images/synopsis-rec.png',
     blog: 'https://www.google.com',
-    git: 'https://github.com/Blistt/Recommender-System-Personality'
+    git: 'https://github.com/Blistt/Information-Retrieval-System-Synopses'
   }
 ]
 
