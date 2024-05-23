@@ -68,7 +68,7 @@ const HomeSection = () => {
                             I'm an AI developer specialized in deep learning and computer vision. My projects have focused primarily in
                             generative modeling and recommender systems. A mixed background in mathematics, psychology, and computer science
                             allows me to approach problems with technical rigor without foregoing explainability. I leverage years of experience 
-                            as an academic researcher and a Machine Learning contractor and Statistical Research Analyst for industry. 
+                            as an academic researcher as well as a Machine Learning contractor and Statistical Research Analyst for industry. 
                         </p>
                         <div className='mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3'>
                         <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-950 via-purple-500 to-pink-300 hover:bg-slate-200 text-white'>

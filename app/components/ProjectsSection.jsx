@@ -7,7 +7,7 @@ const ProjectsData =[
     title: 'GAN Frame Interpolator',
     description: 'Adds non-existent frames between two frames of an animation using Generative Adversarial Networks.',
     image: '/images/gan-interpolator.png',
-    blog: '/gan-interpolator',
+    blog: 'projects/gan-interpolator',
     git: 'https://github.com/Blistt/Animation-GAN-InBetwener'
   },
   {
