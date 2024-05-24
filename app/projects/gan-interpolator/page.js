@@ -6,19 +6,16 @@ export default function Page() {
       <main className="flex min-h-screen flex-col bg-[#121212]">
         <Navbar />
         <div className="container mt-24 mx-auto py-4 px-12">
-            <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold'>
+            <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4'>
               GAN In-between Frame Generator
             </h1>
-            <div className="mt-4 md:mt-0 text-left flex flex-col h-full items-center">
-              <p className="text-white text-base md:text-lg" style={{ color: '#999', fontStyle: 'italic', marginBottom: '10px' }}>
-                Too long, won't read: This project implements a frame interpolation system that generates in-between frames
-                in an animated video using a Generative Adversarial Network (GAN).
-              </p>
+            <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
               <p className="text-white text-base md:text-lg">
                 In traditional 2D animation, artists hand-draw thousands of frames for a single episode. The process 
                 starts with key frames that define the main poses and movements. Then, in-between frames are drawn to 
-                create smooth transitions. This in-betweening task is often seen as monotonous 
-                and often outsourced.
+                create smooth transitions. This in-betweening task is typically monotonous 
+                and often outsourced overseas. This project implements a solution using Generative Adversarial Networks 
+                (GANs) to assist in the automatization of this process.
               </p>
               <div className="flex justify-center w-full py-4">
                 <Image
@@ -28,35 +25,84 @@ export default function Page() {
                   height={350}
                 />
               </div>
+              <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                A little background on frame interpolation
+              </h2>
               <p className='text-white text-base md:text-lg'>
                 The most straight-forward way to generate in-between frames programatically from drawings is through frame 
                 interpolation, a pretty common task in computer vision. It consists of generating non-existent frames between  
-                two existing frames. However, most modern frame interpolation systems have been developed for natural video 
+                two existing frames to artificially increase a video's frame-rate. However, most modern frame interpolation systems 
+                have been developed for natural video 
                 (i.e., real-world footage), and their performance does not generalize well to 2D animation.
-                Frame interpolation typically entails correspondence mapping: figuring out what regions in one frame correspond to
-                what regions in the next frame. In 2D animation, objects change substantially more from one frame to the next. 
-                In natural video, it is easy to have the camera take 24 photographs per second of video. 
+                Frame interpolation typically requires figuring out what regions in one frame correspond to
+                what regions in the next frame, a.k.a., correspondence mapping. Nonetheless, in 2D animation, objects can change substantially more from one
+                frame to the next. Why? In natural video, it is easy to have the camera take 24 photographs per second of video. 
                 However, in animation, each frame is drawn by hand, so, to economize, it is common to have the animators draw 
-                only 8-12 frames per second of video. This leads to animated frames being much more different from
-                each other than natural video frames, making correspondence mapping notoriously harder, to the point that it
-                becomes an ill-posed approach to solve in-betweening for 2D animation.
+                only 8-12 frames per second of video. This leads to consecutive animated frames often being much more different from
+                each other than natural video frames, making correspondence mapping notoriously harder. 
               </p>
               <div className="flex justify-center w-full py-4">
                 <Image
                   src='/images/figure2.10.png'
-                  alt='figure1'
+                  alt='figure2'
                   width={600}
                   height={400}
                 />
               </div>
+
               <p className='text-white text-base md:text-lg'>
-                Generative modeling on the other hand, is a more flexible approach that will not explicitly look for correspondences
-                accross pixels to produce convincing in-between frames. This project uses Generative Adversarial Networks (GANs), a 
-                family of generative models widely used in the creative domain. GANs work by training two competing neural networks: 
-                a generator that attempts to generate fake images indistinguishable from real ones, and a discriminator 
-                that attempts to distinguish between real and fake images. 
+                Therefore, trying to figure out how to move each pixel in a frame to turn it into the next frame is an ill-posed approach
+                to solve in-betweening for 2D animation. Instead we can look at generative modeling, a more flexible approach that will 
+                not explicitly look for correspondences across pixels to produce convincing in-between frames. In this project, we use 
+                Generative Adversarial Networks (GANs), a relatively cheap (compared to DDPMs), yet powerful generative modeling technique, 
+                to generate in-between frames.
               </p>
 
+              <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                Generative Adversarial Networks (GANs)
+              </h2>
+              <p className='text-white text-base md:text-lg'>
+                The ultimate criteria to determine the quality of a generated frame is not checking that each pixel is where it's supposed to be, 
+                but whether a person thinks the frame looks good or not. Thus, ideally we would get a person to judge each attempt the system 
+                does at generating an in-between frame, so that the generator network can try and try and try and try again until it gets the human to 
+                say "yes, that looks good". Sadly, it is just not feasible to have a person judge each frame, as deep learning models need to go through
+                an absurdly large number of examples and iterations to learn something useful. Therefore, in lieu of a human, we use can use another
+                network to serve as the judge. 
+                That is the core idea behind GANs, where two networks are pit against each other: a generetor network that tries to produce convincing 
+                images, and a discriminator network that tries to tell apart examples of real images from generated images. The generator network
+                is trained to fool the discriminator network, and the discriminator network is trained to not be fooled. Eventually, this adversarial training
+                gets the generator network to produce incredibly realistic looking images.
+              </p>
+              <div className="flex justify-center w-full py-4">
+                <Image
+                  src='/images/gans.png'
+                  alt='figure3'
+                  width={600}
+                  height={400}
+                />
+              </div>
+
+              <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                The model
+              </h2>
+              <p className='text-white text-base md:text-lg'>
+                We used an GAN-based architecture to generate in-between frames, with some modifications to adapt it for frame interpolation. For one, 
+                in the original GAN architecture, the generator network takes in a random noise vector and outputs an image. However, in our case, the 
+                generator takes two consecutive frames as input, and outputs the frame that should go in-between. The discriminator network looks at the 
+                generated frame, and the real in-between frame (we trained the model on a dataset of real frame sequences), and tries to tell them apart. 
+                The discriminator sends its feedback to the generator. In addition, the generator also looks at the real in-between frame, and computes a
+                perceptually oriented error meassure, which it integrates with the feedback from the discriminator to get a better sense of how to improve.
+                For a more complete explanation of the model, including architecture specifications, loss functions and evaluation metrics, check out the 
+                thesis paper linked at the end of this page.
+              </p>
+              <div className="flex justify-center w-full py-4">
+                <Image
+                  src='/images/gangenerator.png'
+                  alt='figure4'
+                  width={600}
+                  height={400}
+                />
+              </div>
               
             </div>   
         </div>

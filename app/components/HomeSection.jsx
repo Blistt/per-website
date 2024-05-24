@@ -56,15 +56,15 @@ const HomeSection = () => {
             <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-8 sm:gap-x-16'>
                 <div className='col-span-7 place-self-center text-center sm:text-left'>
                     <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold'>
-                    <span className='text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-blue-950'>
-                                Francisco Arriaga
-                            </span>
+                        <span className='text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-blue-950'>
+                            Francisco Arriaga
+                        </span>
                     </h1>
                     <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold'>
                         - AI Developer
                     </h1>
                     <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                        <p className="text-white texxt-base md:text-lg">
+                        <p className="text-white text-base md:text-lg">
                             I'm an AI developer specialized in deep learning and computer vision. My projects have focused primarily in
                             generative modeling and recommender systems. A mixed background in mathematics, psychology, and computer science
                             allows me to approach problems with technical rigor without foregoing explainability. I leverage years of experience 
