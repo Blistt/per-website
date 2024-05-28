@@ -15,7 +15,7 @@ const ProjectsData =[
     title: 'XGB Blood Pressure Predictor',
     description: 'Predicts blood pressure levels from biometric data (from smartwatches) using XGBoost regressors.',
     image: '/images/xgb-predictor.png',
-    blog: 'https://www.google.com',
+    blog: 'projects/xgb-bp-predictor',
     git: 'https://github.com/Blistt'
   },
   {
