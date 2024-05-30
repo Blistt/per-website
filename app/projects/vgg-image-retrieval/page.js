@@ -1,5 +1,7 @@
 import Navbar from "../../components/Navbar";
 import Image from 'next/image';
+import { BlockMath } from 'react-katex'; // Import BlockMath component
+import 'katex/dist/katex.min.css'; // Import KaTeX CSS
 
 export default function Page() {
     return (
@@ -61,7 +63,10 @@ export default function Page() {
                 images, i.e., photographs of real-world objects, as opposed to digital illustrations. This project shows that feature embeddings 
                 obtained using the VGG-19 network can yield successful results in the image retrieval of artistically similar digital illustrations. 
                 </p>
-                <div className="flex justify-center mt-8">
+                <h3 className='text-white text-center mt-8 font-bold'>
+                    VGG-19 Architecture
+                </h3>
+                <div className="flex justify-center">
                     <Image
                         src="/images/vgg19.png"
                         alt="VGG 19"
@@ -81,12 +86,146 @@ export default function Page() {
                     Feature maps
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
-                    All the images in the dataset were passed through the VGG-19 network once to obtain the feature maps. To embed a feature, 
+                    A feature map is only a collection of (hopefully meaningful) characteristics/descriptors of an image. Traditionally, hard-coded rules were 
+                    used to process an image and obtain these descriptors (e.g., color histograms, SIFT descriptors, histogram of gradients).
+                    Now, we use neural networks that solve tasks such as classifying an image (cat, dog, plane...), and use the internal representations these networks learn
+                    to solve their tasks as our feature maps. In this project, we pass our images through the VGG-19 network once to obtain the feature maps. To embed a feature, 
                     the activation maps of the last layer in a convolutional block, for example, conv1, are flattened into a single 2D matrix. 
                     These feature maps encode some type of visual pattern across the image, however, for a given feature map, 
                     small variations of positioning can make two otherwise similarly patterned images have a drastically different feature map. 
-                    To counteract this, the feature maps are transformed into gram Matrices in the following way:
+                    To counteract this, the feature maps are transformed into Gram matrices:
+                </p>
+                <span className="text-white text-base md:text-lg mt-4">
+                    <BlockMath math="G = A^T \cdot A" />
+                </span>
+                <p className = "text-white text-base md:text-lg mt-4" >
+                    where A is the feature map. This operation essentially computes the correlation between the different elements in the feature map 
+                    A.
+                </p>
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                    Feature selection
+                </h2>
+                <p className = "text-white text-base md:text-lg mt-4" >
+                    Once the feature maps of each image are transformed into Gram matrices, they can then be combined together to produce the final 
+                    embedding for the image. To combine them, the Gram matrices for all selected feature maps are flattened and appended into a 
+                    single vector. The selection of the layers from which to obtain the feature maps that are included in the final embedding was done 
+                    through experimentation. Detailed descriptions of the experimental results of selecting the feature maps of different layers are 
+                    provided in the Results section. 
+                </p>
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                    K Nearest Neighbors
+                </h2>
+                <p className = "text-white text-base md:text-lg mt-4" >
+                    Upon obtaining the embeddings of the images, Euclidean distance is calculated between the embeddings of all images. Images with 
+                    smaller distances between their embeddings are considered more similar than images with larger distances. Thus, the 5 nearest 
+                    neighbors were obtained for a test set of 60 images for both the digital illustrations and the paintings. Given that the accuracy 
+                    of the neighbors cannot be determined by means other than appraisal by human eyes, using a larger test set was deemed impractical. 
+                    The nearest neighbors using a more traditional CV image feature, color histograms, were obtained as well and presented next to the 
+                    deep learning neighbors for comparison. 
+                </p>
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                    Results
+                </h2>
+                <p className = "text-white text-base md:text-lg mt-4" >
+                    The results of the image retrieval system were evaluated by comparing the 5 nearest neighbors of the digital illustrations to 
+                    the 5 nearest neighbors of the paintings. The results show that the deep learning-based image retrieval system was able to 
+                    successfully retrieve artistically similar images. The images retrieved by the deep learning-based image retrieval system were 
+                    visually more similar to the query image than the images retrieved by the color histogram-based image retrieval system, as can 
+                    be visualized in the following figures. It should be noted that these results are qualitative in nature based on personal appraisal,
+                     and no actual metrics were computed. Please run the demo and play around with different test sets to corroborate the results.
+                </p>
+                <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
+                    Deep Learning embeddings
+                </h3>
+                <div className="flex justify-center">
+                    <Image
+                        src="/images/dlresults.png"
+                        alt="dl-results"
+                        width={800}
+                        height={800}
+                    />
+                </div>
+                <div className="max-w-[800px] mx-auto mt-2">
+                    <p className="text-white text-base md:text-lg italic">
+                        Feature embeddings nearest neighbors for digital illustrations. These images were selected as representatives of the distinct types of compositions in the dataset: faces, multiple characters, and landscapes.
+                    </p>
+                </div>
 
+                <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
+                    Color Histogram embeddings
+                </h3>
+                <div className="flex justify-center">
+                    <Image
+                        src="/images/chresults.png"
+                        alt="ch-results"
+                        width={800}
+                        height={800}
+                    />
+                </div>
+                <div className="max-w-[800px] mx-auto mt-2">
+                    <p className="text-white text-base md:text-lg italic">
+                        Color Histograms nearest neighbors. It should be noted how little to none compositional similarity can be observed between 
+                        any of the images.
+                    </p>
+                </div>
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                    Feature Maps selection
+                </h2>
+                <p className = "text-white text-base md:text-lg mt-4" >
+                    A large volume of work with CNNs supports the notion that distinct layers within the network encode visual information 
+                    at distinct scales, with the first layers encoding lower scale information, such as textures, and the deeper layers 
+                    encoding higher level information, such as composition and structures. Results from this project are consistent with 
+                    said findings. It can be observed in Figure 3 that neighboring images for the feature embeddings of surface layers share 
+                    lower level characteristics such as color palettes and textures, while embeddings for deeper layers share higher level 
+                    characteristics, such as similar compositions. Some researchers have argued that lower level features correspond to the style 
+                    of the illustration, while higher level features to its content. Again, it was surprising that the feature maps from 
+                    the VGG-19 network were able to encode multiple levels of information for digital illustrations successfully for this 
+                    task, seeing as its weights were trained with natural images, which are drastically different in several ways. 
+                    For example, digital illustrations will frequently lack texture level information. As it can be observed in the next Figure, 
+                    large sections of these images are filled with absolutely plain colors, something unlikely to occur in natural images, 
+                    as even plain colored surfaces will have small variations due to light reflection. Prior research claimed that these types 
+                    of attributes would throw deep learning algorithms off, thus rendering them not competitive for image retrieval with digital 
+                    images. Findings from this project provide evidence to the contrary, which is probably a reflection of the rate at which 
+                    the field of computer vision is advancing. To produce embeddings that incorporate information at multiple scale levels, 
+                    the outputs of convolutional layers (transformed into Gram matrices), were appended in the embedding vector of each image. 
+                    As it can be observed in Figure 4., for several images the results of performing this aggregation produce the expected 
+                    results: the images retrieved share low level information, as well as high level information. As support for this conclusion, 
+                    it can be noticed in the examples that when layers are aggregated, the neighbors include images that were selected as 
+                    neighbors in the low level layer embeddings and high level layer embeddings. 
+                </p>
+                <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
+                    Style vs Content scale levels
+                </h3>
+                <div className="flex justify-center">
+                    <Image
+                        src="/images/featureselection.png"
+                        alt="feature-selection"
+                        width={800}
+                        height={800}
+                    />
+                </div>
+                <div className="max-w-[800px] mx-auto mt-2">
+                    <p className="text-white text-base md:text-lg italic">
+                        Layer level nearest neighbors: It should be noted how the similarity in the images in the first pair of layers seems to 
+                        prioritize the color palette, while in latter layers the similarity is more compositional, disregarding the color palette.
+                    </p>
+                </div>
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                    Conclusion
+                </h2>
+                <p className = "text-white text-base md:text-lg mt-4" >
+                    At its conception, this project’s goal was to test the feasibility of a content-based image retrieval system that used deep 
+                    learning feature embeddings to compute similarity between digital images. Results showed that such a system is feasible, 
+                    even when employing a model pre-trained on natural images without any sort of fine tuning. Results in the testing set seemed 
+                    to work with all sorts of compositions and styles of illustration. However, it was noted that performance was consistently 
+                    better for images with minimalistic compositions. Again, it should be noted that evaluation was purely the authors’ personal 
+                    appraisal. As these results were obtained, the objective expanded to include the analyzing of the information conveyed by 
+                    the feature maps corresponding to distinct layers of the network employed. Coming from Psychology, the author was utterly 
+                    amazed at the fact that it was possible to algorithmically decompose the visual experience of art into the style vs. content 
+                    aspects of an image. With such a notion in mind, then rather than generating a single feature embedding to create the best 
+                    content based image retrieval system, it might be interesting to create a system that allows the user to select the type of 
+                    similarity between images desired: style vs content. However, that is a user experience problem, rather than a computer vision 
+                    one. 
                 </p>
             </div>
         </main>
