@@ -65,7 +65,7 @@ export default function Page() {
                     <p className="text-white text-base md:text-lg mt-6 md:px-4">
                         We used the <a href="https://www.synapse.org/#!Synapse:syn11269541/tables/" className="text-blue-400"> My Heart Counts </a> public dataset.
                         This dataset is comprised of the biometric, nutritional, and activity data of over 10,000 individuals, collected through multiple
-                        instruments. We emphasized on the data collected via Apple Watches, for a total of 12 variables, which include step count, sleep minutes, 
+                        instruments. We focused on the data collected via Apple Watches, for a total of 12 variables, which include step count, sleep minutes, 
                         active minutes, calories, burned, etc.
                         We also retrieved blood pressure readings, both systolic and diastolic, from the participants. 
                         It was noted early on, that while the dataset was rich in terms of the number of participants, the data, particularly the BP readings, was extremely sparse.
@@ -133,25 +133,27 @@ export default function Page() {
             </div>
             <p className="text-white text-base md:text-lg mt-4">
                 In the original UCSD study, they personalize their system to each user by training an entire model from scratch for each user. This is 
-                feasible in a research setting and a small dataset of 6 individuals, but is not scalable to a larger population, nor a production environment
+                feasible in a research setting with a small dataset of 6 individuals, but is not scalable to a larger population, and it is not suitable for a production environment
                 where users won't necessarily be willing to provide months' worth of data before they can receive the personalized recommendations they signed up for.
                 We solve that through transfer learning: we first train the model on a large dataset of all users, then fine-tune the model on data set apart for each 
                 individual user. This way, despite there only being a few days worth of data for each user, the model can still make accurate predictions informed
                 by its training on a large, diverse sample of users. Then, as the user provides more data, the fine-tuning process will rely less on its base training and 
                 more on the user's own data, thus enhancing personalization.
             </p>
-            <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
                 Evaluation
-            </h3>
+            </h2>
             <p className="text-white text-base md:text-lg mt-4">
                 We use standard error metrics, namely Mean Absolute Error (MAE) and Mean Squared Error (MSE) to evaluate our model's performance. These metrics, particularly MAE,
-                are straightforward measures of the error made by the model in the prediction of BP levels. Our system achieves a MAE of 9.7 for systolic BP and 6.3 for diastolic BP. 
-                In other words, our model's predictions are off, on average, by 9.7 mmHg for systolic BP and 6.3 mmHg for diastolic BP. For evaluation purposes, we also implement 
-                UCSD's model, with personalized RF regressors, and find that our model outperforms theirs by over 25% in terms of MAE after averaging for both systolic and diastolic BP.
+                are straightforward measures of the error made by the model in the prediction of BP levels. Our system achieves a MAE of  
+                <span className="text-purple-500 font-bold"> 9.7</span> for systolic BP and <span className="text-purple-500 font-bold"> 6.3 </span> 
+                for diastolic BP. In other words, our model's predictions are off, on average, by 9.7 mmHg for systolic BP and 6.3 mmHg for diastolic BP. 
+                For evaluation purposes, we also implement UCSD's model, with personalized RF regressors, and find that our model outperforms theirs by over 
+                <span className="text-purple-500 font-bold"> 25% </span> in terms of MAE after averaging for both systolic and diastolic BP.
             </p>
-            <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
                 Recommendations
-            </h3>
+            </h2>
             <p className="text-white text-base md:text-lg mt-4">
                 The last step in the pipeline is producing the recommendations. Gradient boosted trees have the nice property where
                 the variance in the final prediction that each input feature accounts for is significantly more tractable than it would be for more sophisticated 

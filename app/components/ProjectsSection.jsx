@@ -6,7 +6,7 @@ const ProjectsData =[
     id: 1,
     title: 'GAN Frame Interpolator',
     description: 'Adds non-existent frames between two frames of an animation using Generative Adversarial Networks.',
-    image: '/images/gan-interpolator.png',
+    image: '/images/sakuga.jpg',
     blog: 'projects/gan-interpolator',
     git: 'https://github.com/Blistt/Animation-GAN-InBetwener'
   },
@@ -22,8 +22,8 @@ const ProjectsData =[
     id: 3,
     title: 'Image Retrieval System',
     description: 'Retrieves artistically similar images to a query image using deep learning embeddings.',
-    image: '/images/image-retrieval.png',
-    blog: 'https://www.google.com',
+    image: '/images/vgg-image-retrieval.png',
+    blog: 'projects/vgg-image-retrieval',
     git: 'https://github.com/Blistt/vgg-image-retrieval'
   },
   {
