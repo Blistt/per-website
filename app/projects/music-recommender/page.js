@@ -59,14 +59,103 @@ export default function Page() {
                 <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
                     Radio Sampler
                 </h2>
+                <p className='text-white text-base md:text-lg'>
+                    The purpose of the radio sampler is to capture a set of FM radio station frequency signals and output a sample
+                    of the audio they are playing in a human friendly format. At this initial stage, we prototype the system to sample 
+                    FM frequencies with the help of an RTL-SDR device. There is a noticeable gap between raw radio waves and the music we hear. 
+                    Radio sampler is responsible for bridging this gap, then storing the audio samples for the system to use.
+                    Written in Python, it follows three main steps: First, it captures radio signals by communicating with an RTL-SDR hardware module.
+                    Similar to tuning a radio station, it captures raw radio signals at specific frequencies. Then, radio tuner processes these signals.
+                    Initially chaotic and noisy, the captured signals are cleaned up using standard python libraries like numpy and scipy.signal. This process
+                    includes down-sampling and demodulating. These processes correct distortions and extract meaningful information in a way that's friendly 
+                    to the human hearing system. Lastly, the script saves a few seconds of the audio from each radio frequency (station) in an mp3 file for
+                    the musical similarity computation. 
+                </p>
                 
                 <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
                     Radio Selector
                 </h2>
+                <p className='text-white text-base md:text-lg'>
+                    After obtaining the sampled audio mp3 files using radio_sampler, we used a pre-trained Convolutional Neural Network (CNN) model, 
+                    <a href='https://github.com/jordipons/musicnn' className='text-blue-400'> musicnn</a> to obtain an audio representation 
+                    that encoded musical similarity between audio files. 
+                </p>
+                <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+                    Musicnn
+                </h3>
+                <p className='text-white text-base md:text-lg'>
+                    Musicnn is a music tagger system. It uses a modified convolutional neural net with extra dense layers 
+                    and recurrent modules to account for the importance of the temporal dimension in the audio domain. 
+                    The output of this system is the classification of a song into one of 48 genres. Musicnn, however, 
+                    was also designed as a more general purpose feature extractor, with the library providing functions to 
+                    obtain an internal network representation (prior to the classification layer) that can be used as a 
+                    machine friendly encoding of the musical features in an audio file. One of these representations is 
+                    called a “taggram”, which measures the degree to which the song contains multiple musical genres at 
+                    every given time interval.
+                </p>
+                <div className="flex justify-center mt-8">
+                    <Image
+                        src="/images/taggram.jpg"
+                        alt="taggram"
+                        width={500}
+                        height={500}
+                    />
+                </div>
+
+                <p className='text-white text-base md:text-lg mt-4'>
+                    We average the taggram musicnn provides over the temporal dimension, such that we get a taggram of the audio 
+                    file, giving us a map of the presence/absence of multiple musical genres overall during the song.  The taggram 
+                    representation effectively turns any given audio file into a 50-dimensional vector of musical genres. 
+                </p>
+                <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+                    Taggram neighbor search
+                </h3>
+                <p className='text-white text-base md:text-lg'>
+                    Once the taggrams are obtained, we simply compute the distance (euclidean, in this case) between the taggram 
+                    representation of the query audio file, and the taggram representation of each of the candidate sampled audio 
+                    files from the radio stations. The taggram with the shortest distance is considered the most musically similar 
+                    audio file. Radio selector outputs the radio frequency corresponding to this file, which radio tuner will use to 
+                    tune into that radio station.
+                </p>
+
 
                 <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
                     Radio Tuner
                 </h2>
+                <p className='text-white text-base md:text-lg'>
+                    The radio tuner module is a truncated version of the radio sampler module. It essentially uses the same functions
+                    to bridge the gap between radio waves and the music we hear, minus the saving of the files and tuning to multiple stations.
+                    Radio tuner simply tunes into the radio station that radio selector has chosen as the most musically similar to the query song,
+                    performs all the necessary processing to turn the radio signal into hearable music, and plays it through the device's 
+                    speakers/headphones.
+                </p>
+
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                    Evaluation
+                </h2>
+                <p className='text-white text-base md:text-lg'>
+                    To evaluate the system's performance, we simply used a set of 20 songs as queries, and sampled from around 22 local radio stations.
+                    We chose a small set of radio stations to allow for live sampling. Given our computational resources and hardware (RTL-SDR), choosing a 
+                    larger set of radio stations would have required to pre-compute the samples, which is unsuitable for the task, as radio stations do not
+                    consistently play the same music. We recruited a small set of 4 volunteer to query these songs then rate on a 5-point Likert scale how
+                    similar the music playing in the selected radio station was to the query song. After averaging the results across all songs and all participants,
+                    we obtained an average <span className="text-purple-500 font-bold">similarity score of 3.4 out of 5.</span>
+                </p>
+                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                    Conclusion
+                </h2>
+                <p className='text-white text-base md:text-lg'>
+                    This project successfully integrates existing deep learning and signal processing tools to produce a simple system that finds radio stations playing
+                    music similar to a given query song. Nonetheless, the system is still in its infancy, as experimentation reveals key challenges to overcome
+                    before such a tool can be put into production. Our main challenge lies not with the proper computation of musical similarity, as we found musicnn and 
+                    similar tools to work more than satisfactorily. The main challenge lies with the disconnect between sampling time and the tuning to the selected radio station. 
+                    The musical similarity is calculated between the sampled audio and the query song, however, with live sampling, this process can take as much as 40 seconds. 
+                    Therefore, by the time the system tunes into the selected radio station, the music playing may have changed, or even gone into commercials.
+                    As evidence for this, we found that when asking our volunteers to rate the similarity of the music playing between the sampled audio and the query song for the winning station
+                    (as opposed for the music playing by the time the system tunes into it), the average similarity score rises to 4.2 out of 5. Efficient sampling and signal processing, thus, 
+                    become the next steps to take in order to turn the system into a usable product.
+                </p>
+
 
             </div>    
         </main>
