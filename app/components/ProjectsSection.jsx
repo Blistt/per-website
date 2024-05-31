@@ -31,7 +31,7 @@ const ProjectsData =[
     title: 'Radio Music Recommender',
     description: 'Tunes to a radio station playing the most musically similar song to a query song.',
     image: '/images/music-rec2.png',
-    blog: 'https://www.google.com',
+    blog: 'projects/music-recommender',
     git: 'https://github.com/Blistt/wavebox'
   },
   {
