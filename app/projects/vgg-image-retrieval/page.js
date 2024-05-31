@@ -175,7 +175,7 @@ export default function Page() {
                     A large volume of work with CNNs supports the notion that distinct layers within the network encode visual information 
                     at distinct scales, with the first layers encoding lower scale information, such as textures, and the deeper layers 
                     encoding higher level information, such as composition and structures. Results from this project are consistent with 
-                    said findings. It can be observed in Figure 3 that neighboring images for the feature embeddings of surface layers share 
+                    said findings. It can be observed in the next image that neighboring images for the feature embeddings of surface layers share 
                     lower level characteristics such as color palettes and textures, while embeddings for deeper layers share higher level 
                     characteristics, such as similar compositions. Some researchers have argued that lower level features correspond to the style 
                     of the illustration, while higher level features to its content. Again, it was surprising that the feature maps from 
@@ -186,12 +186,7 @@ export default function Page() {
                     as even plain colored surfaces will have small variations due to light reflection. Prior research claimed that these types 
                     of attributes would throw deep learning algorithms off, thus rendering them not competitive for image retrieval with digital 
                     images. Findings from this project provide evidence to the contrary, which is probably a reflection of the rate at which 
-                    the field of computer vision is advancing. To produce embeddings that incorporate information at multiple scale levels, 
-                    the outputs of convolutional layers (transformed into Gram matrices), were appended in the embedding vector of each image. 
-                    As it can be observed in Figure 4., for several images the results of performing this aggregation produce the expected 
-                    results: the images retrieved share low level information, as well as high level information. As support for this conclusion, 
-                    it can be noticed in the examples that when layers are aggregated, the neighbors include images that were selected as 
-                    neighbors in the low level layer embeddings and high level layer embeddings. 
+                    the field of computer vision is advancing. 
                 </p>
                 <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
                     Style vs Content scale levels
@@ -220,12 +215,11 @@ export default function Page() {
                     to work with all sorts of compositions and styles of illustration. However, it was noted that performance was consistently 
                     better for images with minimalistic compositions. Again, it should be noted that evaluation was purely the authors’ personal 
                     appraisal. As these results were obtained, the objective expanded to include the analyzing of the information conveyed by 
-                    the feature maps corresponding to distinct layers of the network employed. Coming from Psychology, the author was utterly 
-                    amazed at the fact that it was possible to algorithmically decompose the visual experience of art into the style vs. content 
+                    the feature maps corresponding to distinct layers of the network employed. As someone with some background in psychology, I 
+                    personally find it amazing to see that it is possible to algorithmically decompose the visual experience of art into the style vs. content 
                     aspects of an image. With such a notion in mind, then rather than generating a single feature embedding to create the best 
                     content based image retrieval system, it might be interesting to create a system that allows the user to select the type of 
-                    similarity between images desired: style vs content. However, that is a user experience problem, rather than a computer vision 
-                    one. 
+                    similarity between images desired: style vs content.
                 </p>
             </div>
         </main>
