@@ -39,7 +39,7 @@ const ProjectsData =[
     title: 'Personality-based Recommender System',
     description: 'Recommends movies and TV shows based on the user\'s personality traits combined with database ratings.',
     image: '/images/personality-rec.png',
-    blog: 'https://www.google.com',
+    blog: 'projects/personality-recommender',
     git: 'https://github.com/Blistt/Recommender-System-Personality'
   },
   {
