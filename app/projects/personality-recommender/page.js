@@ -100,7 +100,8 @@ export default function Page() {
                     </div>
                     <p className="text-white text-base md:text-lg">
                         We integrate the personality scores with the ratings to the CF model in a cascading fashion. We start by predicting missing ratings
-                        with a 
+                        with a single pass of KNN based entirely on personality ratings. For the rating prediction, we use weighed aggregation based of the
+                        neighbors' correlation coefficient (Pearson's r) with the target user.  
                     </p>
                 </div>
             </div>
