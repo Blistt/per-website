@@ -48,8 +48,7 @@ export default function Page() {
                 </div>
                 <p className="text-white text-base md:text-lg mt-4">
                 Traditionally, providing a measure of similarity between images of artwork has been a task only performed by humans. 
-                This is attributed to the fact that the “artistic” experience is considered highly subjective in nature, and thus, typically
-                 deemed non-measurable in any form, much less algorithmically. However, recent advances in computer vision have allowed us to 
+                The “artistic” experience is too subjective to be accurately measured in any form, much less algorithmically. However, recent advances in computer vision have allowed us to 
                  make strides in the algorithmic solving of this problem, while simultaneously providing some interesting insights on the distinct 
                  elements of visual artistic perception. Measuring how similar two images are is a long-standing research topic in the 
                  Computer Vision community, where it is formally known as Content Based Image Retrieval. The most effective approaches
@@ -88,7 +87,7 @@ export default function Page() {
                 <p className = "text-white text-base md:text-lg mt-4" >
                     A feature map is only a collection of (hopefully meaningful) characteristics/descriptors of an image. Traditionally, hard-coded rules were 
                     used to process an image and obtain these descriptors (e.g., color histograms, SIFT descriptors, histogram of gradients).
-                    Now, we use neural networks that solve tasks such as classifying an image (cat, dog, plane...), and use the internal representations these networks learn
+                    Now, we use neural networks that solve other tasks such as classifying an image (cat, dog, plane...), and use the internal representations these networks learn
                     to solve their tasks as our feature maps. In this project, we pass our images through the VGG-19 network once to obtain the feature maps. To embed a feature, 
                     the activation maps of the last layer in a convolutional block, for example, conv1, are flattened into a single 2D matrix. 
                     These feature maps encode some type of visual pattern across the image, however, for a given feature map, 
