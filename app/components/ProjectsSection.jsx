@@ -42,14 +42,14 @@ const ProjectsData =[
     blog: 'projects/personality-recommender',
     git: 'https://github.com/Blistt/Recommender-System-Personality'
   },
-  {
-    id: 6,
-    title: 'Synopsis-based Books & Movie Recommender',
-    description: 'Recommends books, movies and TV shows based on a query synopsis using classical NLP techniques and LLM embeddings',
-    image: '/images/synopsis-rec.png',
-    blog: 'https://www.google.com',
-    git: 'https://github.com/Blistt/Information-Retrieval-System-Synopses'
-  }
+  // {
+  //   id: 6,
+  //   title: 'Synopsis-based Books & Movie Recommender',
+  //   description: 'Recommends books, movies and TV shows based on a query synopsis using classical NLP techniques and LLM embeddings',
+  //   image: '/images/synopsis-rec.png',
+  //   blog: 'https://www.google.com',
+  //   git: 'https://github.com/Blistt/Information-Retrieval-System-Synopses'
+  // }
 ]
 
 const ProjectsSection = () => {
@@ -60,13 +60,14 @@ const ProjectsSection = () => {
       </h2>
       <div className='grid md:grid-cols-3 gap-8 md:gap-12 mt-4'>
         {ProjectsData.map((project) => (
-          <ProjectCard 
-            key={project.id} 
-            title={project.title} 
-            description={project.description} 
-            imgUrl={project.image} 
+          <ProjectCard
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            imgUrl={project.image}
             blogUrl={project.blog}
             gitUrl={project.git}
+            className='w-full'
           />
         ))}
       </div>
