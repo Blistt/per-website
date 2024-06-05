@@ -156,6 +156,16 @@ export default function Page() {
                     become the next steps to take in order to turn the system into a usable product.
                 </p>
 
+                <div className="flex justify-center w-full mt-4">
+                    <a href='https://github.com/Blistt/wavebox/' target='_blank' rel='noopener noreferrer'>
+                    <img src='/images/githublogo2.png' alt='gan-git' style={{ width: '85px', height: '85px' }} />
+                    </a>
+                </div>
+                <div className="flex justify-center w-full">
+                    <p className='text-white text-base md:text-lg ml-4'>
+                    Check out the project's code on GitHub
+                    </p>
+                </div>
 
             </div>    
         </main>

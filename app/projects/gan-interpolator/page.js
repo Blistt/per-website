@@ -9,8 +9,9 @@ export default function Page() {
           <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4'>
             GAN In-between Frame Generator
           </h1>
+
           <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-            <p className="text-white text-base md:text-lg">
+            <p className="text-white text-base md:text-lg mt-8">
               In traditional 2D animation, artists hand-draw thousands of frames for a single episode. The process 
               starts with key frames that define the main poses and movements. Then, in-between frames are drawn to 
               create smooth transitions. This in-betweening task is typically monotonous 
@@ -213,12 +214,24 @@ export default function Page() {
               (in terms of topology). 
               <br />
               For a complete run of the project, with architecture specifications, loss functions, evaluation metrics, results, and formulations,
-              check out the thesis paper linked below.
-              'link to thesis paper'
+              check out the thesis paper linked below. <br />
+              <a className='text-blue-400' href='/documents/IN_BETWEEN_FRAME_GENERATION_FOR_UNCOLORED_2D_ANIMATION.pdf' download='gan-inbetween-thesis.pdf'>
+                Thesis Paper
+              </a>
             </p>
+          </div>
 
-
-          </div>   
+          <div className="flex justify-center w-full">
+            <a href='https://github.com/Blistt/Animation-GAN-InBetwener/' target='_blank' rel='noopener noreferrer'>
+              <img src='/images/githublogo2.png' alt='gan-git' style={{ width: '85px', height: '85px' }} />
+            </a>
+          </div>
+          <div className="flex justify-center w-full">
+            <p className='text-white text-base md:text-lg ml-4'>
+              Check out the project's code on GitHub
+            </p>
+          </div>
+             
         </div>
       </main>
     )

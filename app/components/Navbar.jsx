@@ -7,16 +7,16 @@ import MenuOverlay from "./MenuOverlay";
 
 const navLinks = [
   {
-    title: "About",
-    path: "#about",
+    title: "Home",
+    path: "/#home",
   },
   {
     title: "Projects",
-    path: "#projects",
+    path: "/#projects",
   },
   {
     title: "Contact",
-    path: "#contact",
+    path: "/#contact",
   },
 ];
 
@@ -25,12 +25,12 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
-      <div className="flex flex-wrap items-center justify-between mx-auto p-8">
+      <div className="flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
           className="text-2xl md:text-3xl text-white font-semibold"
         >
-          LOGO
+          FA
         </Link>
         <div className="block md:hidden">
           {!navbarOpen ? (

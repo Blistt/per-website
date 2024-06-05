@@ -54,8 +54,8 @@ const ProjectsData =[
 
 const ProjectsSection = () => {
   return (
-    <>
-      <h2 className='text-center text-4xl font-bold text-white mt-4'>
+    <section id='projects'>
+      <h2 className='text-4xl font-bold text-white mt-4'>
         My Projects 
       </h2>
       <div className='grid md:grid-cols-3 gap-8 md:gap-12 mt-4'>
@@ -71,7 +71,7 @@ const ProjectsSection = () => {
           />
         ))}
       </div>
-    </>
+    </section>
   )
 }
 

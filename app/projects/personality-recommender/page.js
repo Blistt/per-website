@@ -59,7 +59,7 @@ export default function Page() {
                     </h2>
                     <p className="text-white text-base md:text-lg">
                         Our dataset consists of personality scores and ratings for movies/streaming shows. We recruited 3967 participants with accounts
-                        in  <a href="https://myanimelist.net/">(MyAnimeList)</a>, from which we scraped their ratings for movies and streaming shows. We also
+                        in  <a href="https://myanimelist.net/" className='text-blue-400'>MyAnimeList</a>, from which we scraped their ratings for movies and streaming shows. We also
                         administered a battery of personality questionnaires to the participants. 
                     </p>
                     <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
@@ -122,7 +122,7 @@ export default function Page() {
                         Essentially, this formula calculates the unknown rating based on an aggregation of the neighbors' ratings on that item, 
                         weighted by how similar the neighbors are to the user. Additionally, we subtract the average rating so that we only consider 
                         the deviations from users' average rating. 
-                        Some user's rate the shows they like the most wtih a 10 and the ones they like the least with a 5, while others rate their favorite 
+                        Some users rate the shows they like the most wtih a 10 and the ones they like the least with a 5, while others rate their favorite 
                         shows with an 8, and the ones they dislike with a 1. Thus, it is standard practice to account for these differences when aggregating
                         ratings for prediction.
                     </p>
@@ -130,11 +130,11 @@ export default function Page() {
                         Evaluation and Results
                     </h2>
                     <p className="text-white text-base md:text-lg">
-                        We evaluated through Leave-One-Out Cross Validation (LOOCV), which essentially means that we hid every rating in the database from the system,
+                        We evaluated through Leave-One-Out Cross Validation (LOOCV), meaning that we hid every rating in the database from the system,
                         predicted it, then compared the prediction to the actual rating. For the comparison, we computed the Mean Absolute Error (MAE), 
-                        which is simply the absolute difference between the predicted and the actual rating <InlineMath math="MAE = |r - \widetilde{r}|"/>
+                        which is simply the absolute difference between the predicted and the actual rating <InlineMath math="MAE = |r - \widetilde{r}|"/>.
                         Additionally, we recruited 14 participants to actually receive recommendations from the system and give us their explicit feedback through
-                        a set of three rated questions. We divided the participants such that 5 of them received recommendations based on ratings only, 5 based on personality only,
+                        a set of three 5-point Likert-style questions (ratings from 1 to 5). We divided the participants such that 5 of them received recommendations based on ratings only, 5 based on personality only,
                         and 4 based on both ratings and personality.
                     </p>
                     <table className="text-white mx-auto border border-white mt-6">
@@ -224,13 +224,14 @@ export default function Page() {
                     for which the full name is Openness to Experience, is a trait that measures a person's willingness to explore new experiences, 
                     ideas, and behavior. Agreeableness is a trait that measures a person's tendency to comply with the group's preferences and avoid conflict. Lastly,
                     sensation seeking measures a person's tendency to seek high intensity stimuli, such as loud music, dangerous sports, etc. Prior studies
-                    have shown Agreeableness to be an important trait in the recommendation task, as it most likely assists in identifying low baseline raters from 
+                    have shown Agreeableness to be an important trait in the recommendation task, as it most likely assists in distinguishing low baseline raters from 
                     high baseline raters (i.e., harsh critics vs lenient critics). Openness would seem to help pair individuals with diverse tastes with other 
-                    individuals with diverse tastes, as it is a trait that is associated with a willingness to explore new experiences. Sensation seeking, on the other hand,
+                    individuals with diverse tastes, conversely, it probably can also help pair individuals with monotonous tastes with other individuals with monotonous tastes. 
+                    Sensation seeking, on the other hand,
                     is probably useful at the time of pairing users up with similar stimulation thresholds (i.e, how much action, spiciness or intensity they expect from a
                     show/movie). Lastly, regarding Self-Location, the most relevant trait, it has been shown, through studies, that head-locators characterized themselves as rational,
                     logical, and interpersonally cold, whereas heart-locators characterized themselves as emotional,
-                    feminine, and interpersonally warm.
+                    feminine, and interpersonally warm. Thus, this trait may be assisting at pairing up users seeking shows with similar levels of emotional warmth.
                 </p>
                 <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
                     Conclusion
@@ -247,6 +248,18 @@ export default function Page() {
                     
 
                 </div>
+
+                <div className="flex justify-center w-full mt-4">
+                    <a href='https://github.com/Blistt/Recommender-System-Personality' target='_blank' rel='noopener noreferrer'>
+                    <img src='/images/githublogo2.png' alt='gan-git' style={{ width: '85px', height: '85px' }} />
+                    </a>
+                </div>
+                <div className="flex justify-center w-full">
+                    <p className='text-white text-base md:text-lg ml-4'>
+                    Check out the project's code on GitHub
+                    </p>
+                </div>
+
             </div>
         </main>
     )

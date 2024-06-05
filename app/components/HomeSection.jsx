@@ -11,10 +11,10 @@ const TAB_DATA = [
         content: (
             <ul className='list-disc pl-2 text-white'>
                 <li>Python</li>
-                <li>PyTorch</li>
-                <li>TensorFlow</li>
-                <li>Java</li>
+                <li>PyTorch & TensorFlow</li>
                 <li>MySQL</li>
+                <li>Java</li>
+                <li>Next Js</li>
             </ul>
         )
     },
@@ -33,9 +33,9 @@ const TAB_DATA = [
         id: 'certifications',
         content: (
             <ul className='list-disc pl-2 text-white'>
-                <li>Coursera GAN Specialization</li>
-                <li>Coursera Recommender Systems Specialization</li>
-                <li>Coursera Deep Learning Specialization</li>
+                <li>GAN Specialization - Coursera</li>
+                <li>Recommender Systems Specialization - Coursera</li>
+                <li>Deep Learning Specialization - Coursera</li>
             </ul>
         )
     }
@@ -52,7 +52,7 @@ const HomeSection = () => {
         });
     };
     return (
-        <section>
+        <section id='home'>
             <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-8 sm:gap-x-16'>
                 <div className='col-span-7 place-self-center text-center sm:text-left'>
                     <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold'>
@@ -65,20 +65,24 @@ const HomeSection = () => {
                     </h1>
                     <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                         <p className="text-white text-base md:text-lg">
-                            I'm an AI developer specialized in deep learning and computer vision. My projects have focused primarily in
+                            I'm an AI developer specialized in deep learning and computer vision. My work has focused primarily in
                             generative modeling and recommender systems. A mixed background in mathematics, psychology, and computer science
                             allows me to approach problems with technical rigor without foregoing explainability. I leverage years of experience 
                             as an academic researcher as well as a Machine Learning contractor and Statistical Research Analyst for industry. 
                         </p>
-                        <div className='mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3'>
-                        <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-950 via-purple-500 to-pink-300 hover:bg-slate-200 text-white'>
-                            Hire Me
-                        </button>
-                        <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-950 via-purple-500 to-pink-300 hover:bg-slate-800 text-white mt-3'>
-                            <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>
-                                Download CV
-                            </span>
-                        </button>
+                        <div className='mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-12'>
+                            <a className='button py-2 sm:w-fit rounded-full flex justify-center' href='https://github.com/Blistt' target='_blank' rel='noopener noreferrer'>
+                                <button className="sm:w-fit rounded-full flex justify-center">
+                                    <img src="images/githublogo2.png" alt="GitHub Logo" style={{ width: '4.0rem' }} />
+                                </button>
+                            </a>
+                            <a className='button' href='/documents/FranciscoArriaga-Resume.pdf' download='Francisco_Arriaga_Resume.pdf'>
+                                <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-950 via-purple-500 to-pink-300 hover:bg-slate-800 text-white mt-3'>
+                                    <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-2 py-4'>
+                                        Download Resume
+                                    </span>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
