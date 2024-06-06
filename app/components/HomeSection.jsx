@@ -80,7 +80,7 @@ const HomeSection = () => {
                                         height={68} />
                                 </button>
                             </a>
-                            <a className="button" href="/documents/FranciscoArriaga-Resume.pdf" download="Francisco_Arriaga_Resume.pdf">
+                            <a className="button" href="/documents/FranciscoArriaga_Resume.pdf" download="Francisco_Arriaga_Resume.pdf">
                                 <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-950 via-purple-500 to-pink-300 hover:bg-slate-800 text-white mt-3">
                                     <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-2 py-4">
                                         Download Resume
