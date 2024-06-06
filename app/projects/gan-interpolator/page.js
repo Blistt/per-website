@@ -13,7 +13,7 @@ export default function Page() {
           <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
             <p className="text-white text-base md:text-lg mt-8">
               In traditional 2D animation, artists hand-draw thousands of frames for a single episode. The process 
-              starts with key frames that define the main poses and movements. Then, in-between frames are drawn to 
+              starts with the drawing of key frames that define the main poses and movements. Then, in-between frames are drawn to 
               create smooth transitions. This in-betweening task is typically monotonous 
               and often outsourced overseas. This project implements a solution using Generative Adversarial Networks 
               (GANs) to assist in the automatization of this process.
