@@ -31,7 +31,7 @@ export default function Page() {
                     providers have been on the game of perfecting their music recommender systems for a while, and already provide
                     excellent tools to identify songs similar to a given query song. <br />
                     Nevertheless, if a user wanted to perform content-based music retrieval for radio stations, that is, look for a 
-                    radio station playing something similar to a given query song, there aren"t many avenues other than peforming manual
+                    radio station playing something similar to a given query song, there aren&apos;t many avenues other than peforming manual
                     search. If thinking only of local radio stations, this is not a problem, as one can quickly go over the entire lot in a matter of 
                     seconds. But now, it is easy to get access to global radio, in which case manual search is not a viable option. We
                     implement the backend of a system that allows a user to input a song as a query, and automatically tune into a radio 
@@ -67,7 +67,7 @@ export default function Page() {
                     Written in Python, it follows three main steps: First, it captures radio signals by communicating with an RTL-SDR hardware module.
                     Similar to tuning a radio station, it captures raw radio signals at specific frequencies. Then, radio tuner processes these signals.
                     Initially chaotic and noisy, the captured signals are cleaned up using standard python libraries like numpy and scipy.signal. This process
-                    includes down-sampling and demodulating. These processes correct distortions and extract meaningful information in a way that"s friendly 
+                    includes down-sampling and demodulating. These processes correct distortions and extract meaningful information in a way that&apos;s friendly 
                     to the human hearing system. Lastly, the script saves a few seconds of the audio from each radio frequency (station) in an mp3 file for
                     the musical similarity computation. 
                 </p>
@@ -126,7 +126,7 @@ export default function Page() {
                     The radio tuner module is a truncated version of the radio sampler module. It essentially uses the same functions
                     to bridge the gap between radio waves and the music we hear, minus the saving of the files and tuning to multiple stations.
                     Radio tuner simply tunes into the radio station that radio selector has chosen as the most musically similar to the query song,
-                    performs all the necessary processing to turn the radio signal into hearable music, and plays it through the device"s 
+                    performs all the necessary processing to turn the radio signal into hearable music, and plays it through the device&apos;s 
                     speakers/headphones.
                 </p>
 
@@ -134,7 +134,7 @@ export default function Page() {
                     Evaluation
                 </h2>
                 <p className="text-white text-base md:text-lg">
-                    To evaluate the system"s performance, we simply used a set of 20 songs as queries, and sampled from around 22 local radio stations.
+                    To evaluate the system&apos;s performance, we simply used a set of 20 songs as queries, and sampled from around 22 local radio stations.
                     We chose a small set of radio stations to allow for live sampling. Given our computational resources and hardware (RTL-SDR), choosing a 
                     larger set of radio stations would have required to pre-compute the samples, which is unsuitable for the task, as radio stations do not
                     consistently play the same music. We recruited a small set of 4 volunteer to query these songs then rate on a 5-point Likert scale how
@@ -163,7 +163,7 @@ export default function Page() {
                 </div>
                 <div className="flex justify-center w-full">
                     <p className="text-white text-base md:text-lg ml-4">
-                    Check out the project"s code on GitHub
+                    Check out the project&apos;s code on GitHub
                     </p>
                 </div>
 

@@ -13,7 +13,7 @@ export default function Page() {
                 <div className="md:w-2/3 md:pr-8">
                     <p className="text-white text-base md:text-lg md:mt-20">
                     Blood Pressure (BP) is a crucial indicator of cardiovascular health, and one of the most important vital signs 
-                    monitored by healthcare professionals to assess a patient"s overall health. This project uses measures of daily
+                    monitored by healthcare professionals to assess a patient&apos;s overall health. This project uses measures of daily
                     behavior, such as exercise and sleep, collected from smartwatches to predict blood pressure levels and provide
                     personalized recommendations to regulate BP. We use XGBoost regressors to predict daily 
                     systolic and diastolic BP levels for an overall user base, then personalize on an individual level through
@@ -134,21 +134,21 @@ export default function Page() {
             <p className="text-white text-base md:text-lg mt-4">
                 In the original UCSD study, they personalize their system to each user by training an entire model from scratch for each user. This is 
                 feasible in a research setting with a small dataset of 6 individuals, but is not scalable to a larger population, and it is not suitable for a production environment
-                where users won"t necessarily be willing to provide months" worth of data before they can receive the personalized recommendations they signed up for.
+                where users won&apos;t necessarily be willing to provide months&apos; worth of data before they can receive the personalized recommendations they signed up for.
                 We solve that through transfer learning: we first train the model on a large dataset of all users, then fine-tune the model on data set apart for each 
                 individual user. This way, despite there only being a few days worth of data for each user, the model can still make accurate predictions informed
                 by its training on a large, diverse sample of users. Then, as the user provides more data, the fine-tuning process will rely less on its base training and 
-                more on the user"s own data, thus enhancing personalization.
+                more on the user&apos;s own data, thus enhancing personalization.
             </p>
             <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                 Evaluation
             </h2>
             <p className="text-white text-base md:text-lg mt-4">
-                We use standard error metrics, namely Mean Absolute Error (MAE) and Mean Squared Error (MSE) to evaluate our model"s performance. These metrics, particularly MAE,
+                We use standard error metrics, namely Mean Absolute Error (MAE) and Mean Squared Error (MSE) to evaluate our model&apos;s performance. These metrics, particularly MAE,
                 are straightforward measures of the error made by the model in the prediction of BP levels. Our system achieves a MAE of  
                 <span className="text-purple-500 font-bold"> 9.7</span> for systolic BP and <span className="text-purple-500 font-bold"> 6.3 </span> 
-                for diastolic BP. In other words, our model"s predictions are off, on average, by 9.7 mmHg for systolic BP and 6.3 mmHg for diastolic BP. 
-                For evaluation purposes, we also implement UCSD"s model, with personalized RF regressors, and find that our model outperforms theirs by over 
+                for diastolic BP. In other words, our model&apos;s predictions are off, on average, by 9.7 mmHg for systolic BP and 6.3 mmHg for diastolic BP. 
+                For evaluation purposes, we also implement UCSD&apos;s model, with personalized RF regressors, and find that our model outperforms theirs by over 
                 <span className="text-purple-500 font-bold"> 25% </span> in terms of MAE after averaging for both systolic and diastolic BP.
             </p>
             <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
@@ -160,7 +160,7 @@ export default function Page() {
                 approaches, such as deep learning. XGBoost even provides a built-in feature importance metric, that essentially quantifies how much each input feature 
                 (e.g., sleep minutes, step count) contributes to the final prediction. We use this feature importance to compute the recommended changes a user would
                 need to make to bring their daily BP levels to a desired range. For example, for a given user showing BP levels higher than the desired range of 120-80 mmHg,
-                the system might output the following recommendations for the user"s top 3 most important activities:
+                the system might output the following recommendations for the user&apos;s top 3 most important activities:
             </p>
             <table className="text-white mx-auto border border-white mt-6">
                 <thead>

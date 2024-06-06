@@ -13,7 +13,7 @@ export default function Page() {
                 </h1>
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <p className="text-white text-base md:text-lg">
-                        This projects implements a recommender system that integrates a user"s personality traits 
+                        This projects implements a recommender system that integrates a user&apos;s personality traits 
                         with database ratings to recommend movies and streaming shows. We also identify the
                         personality traits that are most important for the recommendation process to better understand
                         how users makes choices when watching and rating content.
@@ -25,14 +25,14 @@ export default function Page() {
                         <div className="md:w-2/3 md:pr-8">
                             <p className="text-white text-base md:text-lg">
                                 Amazon, Netflix, Youtube, Spotify, TikTok, Instagram...their digital catalogues are just too big
-                                for anyone to browse through blindly. They need to be filtered and personalized to the user"s taste through
-                                a recommender system that people tend to plainly call "the algorithm". These companies have made public claims
+                                for anyone to browse through blindly. They need to be filtered and personalized to the user&apos;s taste through
+                                a recommender system that people tend to plainly call &apos;the algorithm&apos;. These companies have made public claims
                                 about how critical their recommender systems are, with people consuming the majority of their content as a result
                                 of these recommendations. Evaluating these systems, though, is not a trivial task, it is an open research topic 
                                 that gets many potential solutions published every year. 
                                 As a result, there is a myriad of metrics now assessing several aspects of the recommendation process, in several 
                                 types of scenarios,
-                                for several types of users...There"s even been a few papers suggesting that UX considerations weight as heavily, if not
+                                for several types of users...There&apos;s even been a few papers suggesting that UX considerations weight as heavily, if not
                                 more, than the choice of recommendation algorithm. Aspects such as how much the user trusts the system, how explainable 
                                 the recommendations are perceived, or how the recommendations themselves seem to respond to user feedback can make or break a 
                                 recommender system.
@@ -51,7 +51,7 @@ export default function Page() {
                     </div>
                     <p className="text-white text-base md:text-lg">
                         With this in mind, we piggy back on the success of personality tests developed by psychology researchers to categorize 
-                        consistent, individualized patterns of behavior. More importantly, we show that people"s trust in these tests can transfer,
+                        consistent, individualized patterns of behavior. More importantly, we show that people&apos;s trust in these tests can transfer,
                         in some measure, to movie and streaming show recommendations obtained through a personality assessment.
                     </p>
                     <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
@@ -108,7 +108,7 @@ export default function Page() {
                     </h3>
                     <p className="text-white text-base md:text-lg">
                         For the rating prediction, we use weighed aggregation based of the
-                        neighbors" correlation coefficient (Pearson"s). Specifically, we calculate the unknown rating  <InlineMath math="\widetilde{r}_{u,i}"/> given 
+                        neighbors&apos; correlation coefficient (Pearson&apos;s). Specifically, we calculate the unknown rating  <InlineMath math="\widetilde{r}_{u,i}"/> given 
                         by user <InlineMath math="u"/> to item <InlineMath math="i"/> as:
                     </p>
                     <span className="text-white text-base md:text-lg mt-4">
@@ -116,10 +116,10 @@ export default function Page() {
                     </span>
                     <p className="text-white text-base md:text-lg">
                         where <InlineMath math="\bar{r_{u}}"/> is the average rating of user <InlineMath math="u"/>, <InlineMath math="\Omega_{u}"/> is the 
-                        set of <InlineMath math="u"/>"s neighbors, <InlineMath math="simr(u, v)"/> is the Pearson"s correlation coefficient between 
+                        set of <InlineMath math="u"/>&apos;s neighbors, <InlineMath math="simr(u, v)"/> is the Pearson&apos;s correlation coefficient between 
                         users <InlineMath math="u"/> and <InlineMath math="v"/>, and <InlineMath math="k"/> is a normalization factor, set 
                         as <InlineMath math="1/\sum_{v \in \Omega_{u}} |simr(u, v)|"/>. 
-                        Essentially, this formula calculates the unknown rating based on an aggregation of the neighbors" ratings on that item, 
+                        Essentially, this formula calculates the unknown rating based on an aggregation of the neighbors&apos; ratings on that item, 
                         weighted by how similar the neighbors are to the user. Additionally, we subtract the average rating so that we only consider 
                         the deviations from users" average rating. 
                         Some users rate the shows they like the most wtih a 10 and the ones they like the least with a 5, while others rate their favorite 
@@ -199,7 +199,7 @@ export default function Page() {
                     and even reported the highest overall quality of recommendations to be highest when ONLY personality information was used. 
                     While the user study contained a substantially smaller sample size than the MAE offline evaluation (15 participants vs 3967), 
                     thus subject to more variability due to chance, it is interesting to note that the system versions integrating personality 
-                    outperformed the other ones in all questions. By looking at these two tables, we can note that if users" historical behavior is evaluated 
+                    outperformed the other ones in all questions. By looking at these two tables, we can note that if users&apos; historical behavior is evaluated 
                     independently (as in the MAE evaluation), 
                     the purely ratings-based recommendations fare better. However, if asked directly, users rate the quality of purely personality-based 
                     recommendations higher. 
@@ -221,9 +221,9 @@ export default function Page() {
                 <p className="text-white text-base md:text-lg mt-4">
                     These traits are presented in order of the magnitude of their Beta coefficients, with Self-Location being the most important trait.
                     Self-location is a single-question test that asks participants if they locate their self either in a) their head or b) their heart. Openness, 
-                    for which the full name is Openness to Experience, is a trait that measures a person"s willingness to explore new experiences, 
-                    ideas, and behavior. Agreeableness is a trait that measures a person"s tendency to comply with the group"s preferences and avoid conflict. Lastly,
-                    sensation seeking measures a person"s tendency to seek high intensity stimuli, such as loud music, dangerous sports, etc. Prior studies
+                    for which the full name is Openness to Experience, is a trait that measures a person&apos;s willingness to explore new experiences, 
+                    ideas, and behavior. Agreeableness is a trait that measures a person&apos;s tendency to comply with the group&apos;s preferences and avoid conflict. Lastly,
+                    sensation seeking measures a person&apos;s tendency to seek high intensity stimuli, such as loud music, dangerous sports, etc. Prior studies
                     have shown Agreeableness to be an important trait in the recommendation task, as it most likely assists in distinguishing low baseline raters from 
                     high baseline raters (i.e., harsh critics vs lenient critics). Openness would seem to help pair individuals with diverse tastes with other 
                     individuals with diverse tastes, conversely, it probably can also help pair individuals with monotonous tastes with other individuals with monotonous tastes. 
@@ -237,7 +237,7 @@ export default function Page() {
                     Conclusion
                 </h2>
                 <p className="text-white text-base md:text-lg">
-                    These results are a testament to the importance of UX considerations in users" perceptions of recommendation quality, seeing
+                    These results are a testament to the importance of UX considerations in users&apos; perceptions of recommendation quality, seeing
                     how when users know that their personality is being taken into account, they rate the recommendations higher, but when evaluated offline, the
                     ratings-only recommendations fare slightly better. Naturally, combining both sources of information produces the best results. Furthermore, 
                     the fact that using only personality information is almost as effective as using only ratings, even in the offline MAE evaluation, has important

@@ -77,8 +77,8 @@ export default function Page() {
                     Dataset
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
-                    The dataset ‘Tagged Anime Illustrations’ was employed, and over 3000 images were collected. These images were combined 
-                    with another dataset of 1045 images scraped from 4chan"s wallpapers section. Given that the model utilized is pre-trained, 
+                    The dataset &apos;Tagged Anime Illustrations&apos; was employed, and over 3000 images were collected. These images were combined 
+                    with another dataset of 1045 images scraped from 4chan&apos;s wallpapers section. Given that the model utilized is pre-trained, 
                     and that no fine tuning was performed, a larger dataset was not necessary. 
                 </p>
                 <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
@@ -208,11 +208,11 @@ export default function Page() {
                     Conclusion
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
-                    At its conception, this project’s goal was to test the feasibility of a content-based image retrieval system that used deep 
+                    At its conception, this project&apos;s goal was to test the feasibility of a content-based image retrieval system that used deep 
                     learning feature embeddings to compute similarity between digital images. Results showed that such a system is feasible, 
                     even when employing a model pre-trained on natural images without any sort of fine tuning. Results in the testing set seemed 
                     to work with all sorts of compositions and styles of illustration. However, it was noted that performance was consistently 
-                    better for images with minimalistic compositions. Again, it should be noted that evaluation was purely the authors’ personal 
+                    better for images with minimalistic compositions. Again, it should be noted that evaluation was purely the authors&apos; personal 
                     appraisal. As these results were obtained, the objective expanded to include the analyzing of the information conveyed by 
                     the feature maps corresponding to distinct layers of the network employed. As someone with some background in psychology, I 
                     personally find it amazing to see that it is possible to algorithmically decompose the visual experience of art into the style vs. content 
@@ -228,7 +228,7 @@ export default function Page() {
                 </div>
                 <div className="flex justify-center w-full">
                     <p className="text-white text-base md:text-lg ml-4">
-                    Check out the project"s code on GitHub
+                    Check out the project&apos;s code on GitHub
                     </p>
                 </div>
             

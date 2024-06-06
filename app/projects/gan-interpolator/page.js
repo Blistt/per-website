@@ -32,7 +32,7 @@ export default function Page() {
             <p className="text-white text-base md:text-lg">
               The most straight-forward way to generate in-between frames programatically from drawings is through frame 
               interpolation, a pretty common task in computer vision. It consists of generating non-existent frames between  
-              two existing frames to artificially increase a video"s frame-rate. However, most modern frame interpolation systems 
+              two existing frames to artificially increase a video&apos;s frame-rate. However, most modern frame interpolation systems 
               have been developed for natural video 
               (i.e., real-world footage), and their performance does not generalize well to 2D animation.
               Frame interpolation typically requires figuring out what regions in one frame correspond to
@@ -63,10 +63,10 @@ export default function Page() {
               Generative Adversarial Networks (GANs)
             </h2>
             <p className="text-white text-base md:text-lg">
-              The ultimate criteria to determine the quality of a generated frame is not checking that each pixel is where it"s supposed to be, 
+              The ultimate criteria to determine the quality of a generated frame is not checking that each pixel is where it&apos;s supposed to be, 
               but whether a person thinks the frame looks good or not. Thus, ideally we would get a person to judge each attempt the system 
               does at generating an in-between frame, so that the generator network can try and try and try and try again until it gets the human to 
-              say "yes, that looks good". Sadly, it is just not feasible to have a person judge each frame, as deep learning models need to go through
+              say &apos;yes, that looks good&apos;. Sadly, it is just not feasible to have a person judge each frame, as deep learning models need to go through
               an absurdly large number of examples and iterations to learn something useful. Therefore, in lieu of a human, we use another
               network to serve as the judge. 
               That is the core idea behind GANs, where two networks are pit against each other: a generetor network that tries to produce convincing 
@@ -108,10 +108,10 @@ export default function Page() {
               Training and dataset
             </h2>
             <p className="text-white text-base md:text-lg">
-              We trained our model on a set of 10,000 real animation triplets, obtained from the "link to place". An animation
+              We trained our model on a set of 10,000 real animation triplets, obtained from the &apos;link to place&apos;. An animation
               triplet is merely a sequence of three consecutive frames (F<sub>1</sub>, F<sub>2</sub>, F<sub>3</sub>) in a video.
               The frames in the dataset are colored, and we need to work from uncolored frames, just as animators in real production
-              scenarios do, so we remove the color using "skethKeras" (link). 
+              scenarios do, so we remove the color using &apos;skethKeras&apos; (link). 
             </p>
             <div className="flex flex-col items-center justify-center w-full py-4">
               <Image
@@ -138,7 +138,7 @@ export default function Page() {
               During training, both the generator and the discriminator get access to the real in-between frame after every attempt
                 to correct their mistakes. To evaluate the system, though, we separate a special test set of triplets, where the middle frame
               is never shown to the generator nor the discriminator. This is a standard practice in machine learning, to ensure that 
-              the model"s performance generalizes to unseen data. 
+              the model&apos;s performance generalizes to unseen data. 
             </p>
             <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               Results and applications
@@ -206,7 +206,8 @@ export default function Page() {
             <p className="text-white text-base md:text-lg">
               This project is a proof of concept that GANs can be used to generate in-between frames for 2D animation. By using an
               extremely simple architecture, with plain convolutional networks for the autoencoder generator and the discriminator, 
-              trained end-to-end, without the need for data annotation or reliance on pre-trained components, we are able to generate in-between frames that are visually convincing. We performed some ablations
+              trained end-to-end, without the need for data annotation or reliance on pre-trained components, we are able to generate 
+              in-between frames that are visually convincing. We performed some ablations
               and found that leaving the autoencoder on its own leads to a decrease of over 50% in performance, in terms of the perceptual
               metrics used. We are currently working on adding a GAN component to other systems specifically designed for 2D animation 
               in-betweening, such as the one proposed by (link to paper) and (link to paper). We argue the contributions of the adversarial 
@@ -228,7 +229,7 @@ export default function Page() {
           </div>
           <div className="flex justify-center w-full">
             <p className="text-white text-base md:text-lg ml-4">
-              Check out the project"s code on GitHub
+              Check out the project&apos;s code on GitHub
             </p>
           </div>
              
