@@ -121,7 +121,7 @@ export default function Page() {
                         as <InlineMath math="1/\sum_{v \in \Omega_{u}} |simr(u, v)|"/>. 
                         Essentially, this formula calculates the unknown rating based on an aggregation of the neighbors&apos; ratings on that item, 
                         weighted by how similar the neighbors are to the user. Additionally, we subtract the average rating so that we only consider 
-                        the deviations from users" average rating. 
+                        the deviations from users&apos; average rating. 
                         Some users rate the shows they like the most wtih a 10 and the ones they like the least with a 5, while others rate their favorite 
                         shows with an 8, and the ones they dislike with a 1. Thus, it is standard practice to account for these differences when aggregating
                         ratings for prediction.
@@ -256,7 +256,7 @@ export default function Page() {
                 </div>
                 <div className="flex justify-center w-full">
                     <p className="text-white text-base md:text-lg ml-4">
-                    Check out the project"s code on GitHub
+                    Check out the project&apos;s code on GitHub
                     </p>
                 </div>
 
