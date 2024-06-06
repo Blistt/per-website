@@ -1,38 +1,38 @@
 import Navbar from "../../components/Navbar";
-import Image from 'next/image';
-import { BlockMath, InlineMath } from 'react-katex'; // Import BlockMath component
-import 'katex/dist/katex.min.css'; // Import KaTeX CSS
+import Image from "next/image";
+import { BlockMath, InlineMath } from "react-katex"; // Import BlockMath component
+import "katex/dist/katex.min.css"; // Import KaTeX CSS
 
 export default function Page() {
     return (
         <main className="flex min-h-screen flex-col bg-[#121212]">
             <Navbar />
             <div className="container mt-24 mx-auto py-4 px-12">
-                <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4'>
+                <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4">
                     Personality-based recommender system
                 </h1>
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <p className="text-white text-base md:text-lg">
-                        This projects implements a recommender system that integrates a user's personality traits 
+                        This projects implements a recommender system that integrates a user"s personality traits 
                         with database ratings to recommend movies and streaming shows. We also identify the
                         personality traits that are most important for the recommendation process to better understand
                         how users makes choices when watching and rating content.
                     </p>
-                    <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                    <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                         Introduction
                     </h2>
                     <div className="flex flex-col md:flex-row">
                         <div className="md:w-2/3 md:pr-8">
                             <p className="text-white text-base md:text-lg">
                                 Amazon, Netflix, Youtube, Spotify, TikTok, Instagram...their digital catalogues are just too big
-                                for anyone to browse through blindly. They need to be filtered and personalized to the user's taste through
+                                for anyone to browse through blindly. They need to be filtered and personalized to the user"s taste through
                                 a recommender system that people tend to plainly call "the algorithm". These companies have made public claims
                                 about how critical their recommender systems are, with people consuming the majority of their content as a result
                                 of these recommendations. Evaluating these systems, though, is not a trivial task, it is an open research topic 
                                 that gets many potential solutions published every year. 
                                 As a result, there is a myriad of metrics now assessing several aspects of the recommendation process, in several 
                                 types of scenarios,
-                                for several types of users...There's even been a few papers suggesting that UX considerations weight as heavily, if not
+                                for several types of users...There"s even been a few papers suggesting that UX considerations weight as heavily, if not
                                 more, than the choice of recommendation algorithm. Aspects such as how much the user trusts the system, how explainable 
                                 the recommendations are perceived, or how the recommendations themselves seem to respond to user feedback can make or break a 
                                 recommender system.
@@ -41,8 +41,8 @@ export default function Page() {
                         <div className="md:w-1/2">
                             <div className="flex justify-center w-full py-4">
                                 <Image
-                                    src='/images/cf.png'
-                                    alt='collaborative filtering'
+                                    src="/images/cf.png"
+                                    alt="collaborative filtering"
                                     width={600}
                                     height={600}
                                 />
@@ -51,24 +51,24 @@ export default function Page() {
                     </div>
                     <p className="text-white text-base md:text-lg">
                         With this in mind, we piggy back on the success of personality tests developed by psychology researchers to categorize 
-                        consistent, individualized patterns of behavior. More importantly, we show that people's trust in these tests can transfer,
+                        consistent, individualized patterns of behavior. More importantly, we show that people"s trust in these tests can transfer,
                         in some measure, to movie and streaming show recommendations obtained through a personality assessment.
                     </p>
-                    <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                    <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                         Dataset and Participants
                     </h2>
                     <p className="text-white text-base md:text-lg">
                         Our dataset consists of personality scores and ratings for movies/streaming shows. We recruited 3967 participants with accounts
-                        in  <a href="https://myanimelist.net/" className='text-blue-400'>MyAnimeList</a>, from which we scraped their ratings for movies and streaming shows. We also
+                        in  <a href="https://myanimelist.net/" className="text-blue-400">MyAnimeList</a>, from which we scraped their ratings for movies and streaming shows. We also
                         administered a battery of personality questionnaires to the participants. 
                     </p>
-                    <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+                    <h3 className="text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2">
                         Ratings
                     </h3>
                     <p className="text-white text-base md:text-lg">
                         The ratings were provided on a scale from 0 to 10. We scrapped a total of 495,793 ratings on 12,268 different shows.
                     </p>
-                    <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+                    <h3 className="text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2">
                         Personality scores
                     </h3>
                     <p className="text-white text-base md:text-lg">
@@ -82,7 +82,7 @@ export default function Page() {
                         <li>Metaphor Use</li>
                         <li>Self-Location</li>
                     </ul>
-                    <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                    <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                         Recommender System Model
                     </h2>
                     <p className="text-white text-base md:text-lg">
@@ -92,8 +92,8 @@ export default function Page() {
                     </p>
                     <div className="flex justify-center w-full py-4">
                         <Image
-                            src='/images/cfmodel.png'
-                            alt='collaborative filtering model'
+                            src="/images/cfmodel.png"
+                            alt="collaborative filtering model"
                             width={600}
                             height={600}
                         />
@@ -103,12 +103,12 @@ export default function Page() {
                         with a single pass of KNN based entirely on personality ratings. Then, we can use KNN again on the enriched set of ratings (with the 
                         predicted personality ratings) and predict missing ratings again. 
                     </p>
-                    <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+                    <h3 className="text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2">
                         Rating prediction
                     </h3>
                     <p className="text-white text-base md:text-lg">
                         For the rating prediction, we use weighed aggregation based of the
-                        neighbors' correlation coefficient (Pearson's). Specifically, we calculate the unknown rating  <InlineMath math="\widetilde{r}_{u,i}"/> given 
+                        neighbors" correlation coefficient (Pearson"s). Specifically, we calculate the unknown rating  <InlineMath math="\widetilde{r}_{u,i}"/> given 
                         by user <InlineMath math="u"/> to item <InlineMath math="i"/> as:
                     </p>
                     <span className="text-white text-base md:text-lg mt-4">
@@ -116,17 +116,17 @@ export default function Page() {
                     </span>
                     <p className="text-white text-base md:text-lg">
                         where <InlineMath math="\bar{r_{u}}"/> is the average rating of user <InlineMath math="u"/>, <InlineMath math="\Omega_{u}"/> is the 
-                        set of <InlineMath math="u"/>'s neighbors, <InlineMath math="simr(u, v)"/> is the Pearson's correlation coefficient between 
+                        set of <InlineMath math="u"/>"s neighbors, <InlineMath math="simr(u, v)"/> is the Pearson"s correlation coefficient between 
                         users <InlineMath math="u"/> and <InlineMath math="v"/>, and <InlineMath math="k"/> is a normalization factor, set 
                         as <InlineMath math="1/\sum_{v \in \Omega_{u}} |simr(u, v)|"/>. 
-                        Essentially, this formula calculates the unknown rating based on an aggregation of the neighbors' ratings on that item, 
+                        Essentially, this formula calculates the unknown rating based on an aggregation of the neighbors" ratings on that item, 
                         weighted by how similar the neighbors are to the user. Additionally, we subtract the average rating so that we only consider 
-                        the deviations from users' average rating. 
+                        the deviations from users" average rating. 
                         Some users rate the shows they like the most wtih a 10 and the ones they like the least with a 5, while others rate their favorite 
                         shows with an 8, and the ones they dislike with a 1. Thus, it is standard practice to account for these differences when aggregating
                         ratings for prediction.
                     </p>
-                    <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                    <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                         Evaluation and Results
                     </h2>
                     <p className="text-white text-base md:text-lg">
@@ -199,12 +199,12 @@ export default function Page() {
                     and even reported the highest overall quality of recommendations to be highest when ONLY personality information was used. 
                     While the user study contained a substantially smaller sample size than the MAE offline evaluation (15 participants vs 3967), 
                     thus subject to more variability due to chance, it is interesting to note that the system versions integrating personality 
-                    outperformed the other ones in all questions. By looking at these two tables, we can note that if users' historical behavior is evaluated 
+                    outperformed the other ones in all questions. By looking at these two tables, we can note that if users" historical behavior is evaluated 
                     independently (as in the MAE evaluation), 
                     the purely ratings-based recommendations fare better. However, if asked directly, users rate the quality of purely personality-based 
                     recommendations higher. 
                 </p>
-                <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+                <h3 className="text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2">
                     Identifying relevant personality traits
                 </h3>
                 <p className="text-white text-base md:text-lg">
@@ -221,9 +221,9 @@ export default function Page() {
                 <p className="text-white text-base md:text-lg mt-4">
                     These traits are presented in order of the magnitude of their Beta coefficients, with Self-Location being the most important trait.
                     Self-location is a single-question test that asks participants if they locate their self either in a) their head or b) their heart. Openness, 
-                    for which the full name is Openness to Experience, is a trait that measures a person's willingness to explore new experiences, 
-                    ideas, and behavior. Agreeableness is a trait that measures a person's tendency to comply with the group's preferences and avoid conflict. Lastly,
-                    sensation seeking measures a person's tendency to seek high intensity stimuli, such as loud music, dangerous sports, etc. Prior studies
+                    for which the full name is Openness to Experience, is a trait that measures a person"s willingness to explore new experiences, 
+                    ideas, and behavior. Agreeableness is a trait that measures a person"s tendency to comply with the group"s preferences and avoid conflict. Lastly,
+                    sensation seeking measures a person"s tendency to seek high intensity stimuli, such as loud music, dangerous sports, etc. Prior studies
                     have shown Agreeableness to be an important trait in the recommendation task, as it most likely assists in distinguishing low baseline raters from 
                     high baseline raters (i.e., harsh critics vs lenient critics). Openness would seem to help pair individuals with diverse tastes with other 
                     individuals with diverse tastes, conversely, it probably can also help pair individuals with monotonous tastes with other individuals with monotonous tastes. 
@@ -233,11 +233,11 @@ export default function Page() {
                     logical, and interpersonally cold, whereas heart-locators characterized themselves as emotional,
                     feminine, and interpersonally warm. Thus, this trait may be assisting at pairing up users seeking shows with similar levels of emotional warmth.
                 </p>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                     Conclusion
                 </h2>
                 <p className="text-white text-base md:text-lg">
-                    These results are a testament to the importance of UX considerations in users' perceptions of recommendation quality, seeing
+                    These results are a testament to the importance of UX considerations in users" perceptions of recommendation quality, seeing
                     how when users know that their personality is being taken into account, they rate the recommendations higher, but when evaluated offline, the
                     ratings-only recommendations fare slightly better. Naturally, combining both sources of information produces the best results. Furthermore, 
                     the fact that using only personality information is almost as effective as using only ratings, even in the offline MAE evaluation, has important
@@ -250,13 +250,13 @@ export default function Page() {
                 </div>
 
                 <div className="flex justify-center w-full mt-4">
-                    <a href='https://github.com/Blistt/Recommender-System-Personality' target='_blank' rel='noopener noreferrer'>
-                        <Image src='/images/githublogo2.png' alt='gan-git' width={85} height={85} />
+                    <a href="https://github.com/Blistt/Recommender-System-Personality" target="_blank" rel="noopener noreferrer">
+                        <Image src="/images/githublogo2.png" alt="gan-git" width={85} height={85} />
                     </a>
                 </div>
                 <div className="flex justify-center w-full">
-                    <p className='text-white text-base md:text-lg ml-4'>
-                    Check out the project's code on GitHub
+                    <p className="text-white text-base md:text-lg ml-4">
+                    Check out the project"s code on GitHub
                     </p>
                 </div>
 

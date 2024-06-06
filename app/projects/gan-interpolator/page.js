@@ -1,12 +1,12 @@
 import Navbar from "../../components/Navbar";
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Page() {
     return (
       <main className="flex min-h-screen flex-col bg-[#121212]">
         <Navbar />
         <div className="container mt-24 mx-auto py-4 px-12">
-          <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4'>
+          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4">
             GAN In-between Frame Generator
           </h1>
 
@@ -20,19 +20,19 @@ export default function Page() {
             </p>
             <div className="flex justify-center w-full py-4">
               <Image
-                src='/images/figure1.1.png'
-                alt='figure1'
+                src="/images/figure1.1.png"
+                alt="figure1"
                 width={600}
                 height={350}
               />
             </div>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               A little background on frame interpolation
             </h2>
-            <p className='text-white text-base md:text-lg'>
+            <p className="text-white text-base md:text-lg">
               The most straight-forward way to generate in-between frames programatically from drawings is through frame 
               interpolation, a pretty common task in computer vision. It consists of generating non-existent frames between  
-              two existing frames to artificially increase a video's frame-rate. However, most modern frame interpolation systems 
+              two existing frames to artificially increase a video"s frame-rate. However, most modern frame interpolation systems 
               have been developed for natural video 
               (i.e., real-world footage), and their performance does not generalize well to 2D animation.
               Frame interpolation typically requires figuring out what regions in one frame correspond to
@@ -44,14 +44,14 @@ export default function Page() {
             </p>
             <div className="flex justify-center w-full py-4">
               <Image
-                src='/images/figure2.10.png'
-                alt='figure2'
+                src="/images/figure2.10.png"
+                alt="figure2"
                 width={600}
                 height={400}
               />
             </div>
 
-            <p className='text-white text-base md:text-lg'>
+            <p className="text-white text-base md:text-lg">
               Therefore, trying to figure out how to move each pixel in a frame to turn it into the next frame is an ill-posed approach
               to solve in-betweening for 2D animation. Instead we can look at generative modeling, a more flexible approach that will 
               not explicitly look for correspondences across pixels to produce convincing in-between frames. In this project, we use 
@@ -59,11 +59,11 @@ export default function Page() {
               to generate in-between frames.
             </p>
 
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               Generative Adversarial Networks (GANs)
             </h2>
-            <p className='text-white text-base md:text-lg'>
-              The ultimate criteria to determine the quality of a generated frame is not checking that each pixel is where it's supposed to be, 
+            <p className="text-white text-base md:text-lg">
+              The ultimate criteria to determine the quality of a generated frame is not checking that each pixel is where it"s supposed to be, 
               but whether a person thinks the frame looks good or not. Thus, ideally we would get a person to judge each attempt the system 
               does at generating an in-between frame, so that the generator network can try and try and try and try again until it gets the human to 
               say "yes, that looks good". Sadly, it is just not feasible to have a person judge each frame, as deep learning models need to go through
@@ -76,17 +76,17 @@ export default function Page() {
             </p>
             <div className="flex justify-center w-full py-4">
               <Image
-                src='/images/gans.png'
-                alt='figure3'
+                src="/images/gans.png"
+                alt="figure3"
                 width={600}
                 height={400}
               />
             </div>
 
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               The model
             </h2>
-            <p className='text-white text-base md:text-lg'>
+            <p className="text-white text-base md:text-lg">
               We used an GAN-based architecture to generate in-between frames, with some modifications to adapt it for frame interpolation. For one, 
               in the original GAN architecture, the generator network takes in a random noise vector and outputs an image. However, in our case, the 
               generator takes two consecutive frames as input, and outputs the frame that should go in-between. The discriminator network looks at the 
@@ -98,54 +98,54 @@ export default function Page() {
             </p>
             <div className="flex justify-center w-full py-4">
               <Image
-                src='/images/gangenerator.png'
-                alt='figure4'
+                src="/images/gangenerator.png"
+                alt="figure4"
                 width={600}
                 height={400}
               />
             </div>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               Training and dataset
             </h2>
-            <p className='text-white text-base md:text-lg'>
-              We trained our model on a set of 10,000 real animation triplets, obtained from the 'link to place'. An animation
+            <p className="text-white text-base md:text-lg">
+              We trained our model on a set of 10,000 real animation triplets, obtained from the "link to place". An animation
               triplet is merely a sequence of three consecutive frames (F<sub>1</sub>, F<sub>2</sub>, F<sub>3</sub>) in a video.
               The frames in the dataset are colored, and we need to work from uncolored frames, just as animators in real production
               scenarios do, so we remove the color using "skethKeras" (link). 
             </p>
             <div className="flex flex-col items-center justify-center w-full py-4">
               <Image
-                src='/images/figure4.1.png'
-                alt='Before line extraction'
+                src="/images/figure4.1.png"
+                alt="Before line extraction"
                 width={800}
                 height={400}
               />
-              <p className='text-white text-base md:text-lg mt-2 mb-6'>
+              <p className="text-white text-base md:text-lg mt-2 mb-6">
                 Triplet before color removal
               </p>
               <Image
-                src='/images/figure4.2.png'
-                alt='After line extraction'
+                src="/images/figure4.2.png"
+                alt="After line extraction"
                 width={800}
                 height={400}
               />
-              <p className='text-white text-base md:text-lg mt-2 mb-6'>
+              <p className="text-white text-base md:text-lg mt-2 mb-6">
                 Triplet after color removal
               </p>
             </div>
-            <p className='text-white text-base md:text-lg'>
+            <p className="text-white text-base md:text-lg">
               Once we we have colorless triplets, we train by hiding the middle frame from the generator, and asking it to generate it.
               During training, both the generator and the discriminator get access to the real in-between frame after every attempt
                 to correct their mistakes. To evaluate the system, though, we separate a special test set of triplets, where the middle frame
               is never shown to the generator nor the discriminator. This is a standard practice in machine learning, to ensure that 
-              the model's performance generalizes to unseen data. 
+              the model"s performance generalizes to unseen data. 
             </p>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               Results and applications
             </h2>
             <div className="flex justify-center w-full py-4">
-              <div className="gif" style={{marginRight: '20px'}}>
-                <h3 className='text-white text-center md:text-lg mt-2 mb-2'>
+              <div className="gif" style={{marginRight: "20px"}}>
+                <h3 className="text-white text-center md:text-lg mt-2 mb-2">
                   Pair of keyframes
                 </h3>
                 <Image
@@ -155,8 +155,8 @@ export default function Page() {
                   height={400}
                 />
               </div>
-              <div className="gif" style={{marginLeft: '20px'}}>
-                <h3 className='text-white text-center md:text-lg mt-2 mb-2'>
+              <div className="gif" style={{marginLeft: "20px"}}>
+                <h3 className="text-white text-center md:text-lg mt-2 mb-2">
                   Generated Triplet
                 </h3>
                 <Image
@@ -167,7 +167,7 @@ export default function Page() {
                 />
               </div>
             </div>
-            <p className='text-white text-base md:text-lg'>
+            <p className="text-white text-base md:text-lg">
               By the time the training is done (30-50 epochs on the entire dataset), the hyper-paremeters fine-tuned, and given
               some adversarial equilibrium was maintained between generator and discriminator, we should be getting generations
               with the quality of the examples shown above. Once we are able to produce convincing in-between frames, we can actually
@@ -177,8 +177,8 @@ export default function Page() {
               with generated in-between frames.
             </p>
             <div className="flex justify-center w-full py-4">
-              <div className="gif" style={{marginRight: '20px'}}>
-                <h3 className='text-white text-center md:text-lg mt-2 mb-2'>
+              <div className="gif" style={{marginRight: "20px"}}>
+                <h3 className="text-white text-center md:text-lg mt-2 mb-2">
                   Original video with duplicate frames
                 </h3>
                 <Image
@@ -188,8 +188,8 @@ export default function Page() {
                   height={400}
                 />
               </div>
-              <div className="gif" style={{marginLeft: '20px'}}>
-                <h3 className='text-white text-center md:text-lg mt-2 mb-2'>
+              <div className="gif" style={{marginLeft: "20px"}}>
+                <h3 className="text-white text-center md:text-lg mt-2 mb-2">
                   Video with generated in-between frames
                 </h3>
                 <Image
@@ -200,10 +200,10 @@ export default function Page() {
                 />
               </div>
             </div>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
               Conclusion
             </h2>
-            <p className='text-white text-base md:text-lg'>
+            <p className="text-white text-base md:text-lg">
               This project is a proof of concept that GANs can be used to generate in-between frames for 2D animation. By using an
               extremely simple architecture, with plain convolutional networks for the autoencoder generator and the discriminator, 
               trained end-to-end, without the need for data annotation or reliance on pre-trained components, we are able to generate in-between frames that are visually convincing. We performed some ablations
@@ -215,20 +215,20 @@ export default function Page() {
               <br />
               For a complete run of the project, with architecture specifications, loss functions, evaluation metrics, results, and formulations,
               check out the thesis paper linked below. <br />
-              <a className='text-blue-400' href='/documents/IN_BETWEEN_FRAME_GENERATION_FOR_UNCOLORED_2D_ANIMATION.pdf' download='gan-inbetween-thesis.pdf'>
+              <a className="text-blue-400" href="/documents/IN_BETWEEN_FRAME_GENERATION_FOR_UNCOLORED_2D_ANIMATION.pdf" download="gan-inbetween-thesis.pdf">
                 Thesis Paper
               </a>
             </p>
           </div>
 
           <div className="flex justify-center w-full">
-            <a href='https://github.com/Blistt/Animation-GAN-InBetwener/' target='_blank' rel='noopener noreferrer'>
-              <Image src='/images/githublogo2.png' alt='gan-git' width={85} height={85} />
+            <a href="https://github.com/Blistt/Animation-GAN-InBetwener/" target="_blank" rel="noopener noreferrer">
+              <Image src="/images/githublogo2.png" alt="gan-git" width={85} height={85} />
             </a>
           </div>
           <div className="flex justify-center w-full">
-            <p className='text-white text-base md:text-lg ml-4'>
-              Check out the project's code on GitHub
+            <p className="text-white text-base md:text-lg ml-4">
+              Check out the project"s code on GitHub
             </p>
           </div>
              

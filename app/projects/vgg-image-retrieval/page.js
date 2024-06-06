@@ -1,14 +1,14 @@
 import Navbar from "../../components/Navbar";
-import Image from 'next/image';
-import { BlockMath } from 'react-katex'; // Import BlockMath component
-import 'katex/dist/katex.min.css'; // Import KaTeX CSS
+import Image from "next/image";
+import { BlockMath } from "react-katex"; // Import BlockMath component
+import "katex/dist/katex.min.css"; // Import KaTeX CSS
 
 export default function Page() {
     return (
         <main className="flex min-h-screen flex-col bg-[#121212]">
             <Navbar />
             <div className="container mt-24 mx-auto py-4 px-12">
-                <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4'>
+                <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4">
                     Retrieving Artistically Similar Images with Convolutional Neural Networks
                 </h1>
                 <div className="flex flex-col md:flex-row">
@@ -24,7 +24,7 @@ export default function Page() {
                             information, and the larger ones depicting 
                             content-level information.
                         </p>
-                        <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-24 mb-2'>
+                        <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-24 mb-2">
                             Introduction    
                         </h2> 
                     </div>
@@ -62,7 +62,7 @@ export default function Page() {
                 images, i.e., photographs of real-world objects, as opposed to digital illustrations. This project shows that feature embeddings 
                 obtained using the VGG-19 network can yield successful results in the image retrieval of artistically similar digital illustrations. 
                 </p>
-                <h3 className='text-white text-center mt-8 font-bold'>
+                <h3 className="text-white text-center mt-8 font-bold">
                     VGG-19 Architecture
                 </h3>
                 <div className="flex justify-center">
@@ -73,15 +73,15 @@ export default function Page() {
                         height={600}
                     />
                 </div>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-24 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-24 mb-2">
                     Dataset
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
                     The dataset ‘Tagged Anime Illustrations’ was employed, and over 3000 images were collected. These images were combined 
-                    with another dataset of 1045 images scraped from 4chan's wallpapers section. Given that the model utilized is pre-trained, 
+                    with another dataset of 1045 images scraped from 4chan"s wallpapers section. Given that the model utilized is pre-trained, 
                     and that no fine tuning was performed, a larger dataset was not necessary. 
                 </p>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
                     Feature maps
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
@@ -101,7 +101,7 @@ export default function Page() {
                     where A is the feature map. This operation essentially computes the correlation between the different elements in the feature map 
                     A.
                 </p>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
                     Feature selection
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
@@ -111,7 +111,7 @@ export default function Page() {
                     through experimentation. Detailed descriptions of the experimental results of selecting the feature maps of different layers are 
                     provided in the Results section. 
                 </p>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
                     K Nearest Neighbors
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
@@ -122,7 +122,7 @@ export default function Page() {
                     The nearest neighbors using a more traditional CV image feature, color histograms, were obtained as well and presented next to the 
                     deep learning neighbors for comparison. 
                 </p>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
                     Results
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
@@ -133,7 +133,7 @@ export default function Page() {
                     be visualized in the following figures. It should be noted that these results are qualitative in nature based on personal appraisal,
                      and no actual metrics were computed. Please run the demo and play around with different test sets to corroborate the results.
                 </p>
-                <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
+                <h3 className="text-purple-500 text-lg text-center mt-8 font-bold">
                     Deep Learning embeddings
                 </h3>
                 <div className="flex justify-center">
@@ -150,7 +150,7 @@ export default function Page() {
                     </p>
                 </div>
 
-                <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
+                <h3 className="text-purple-500 text-lg text-center mt-8 font-bold">
                     Color Histogram embeddings
                 </h3>
                 <div className="flex justify-center">
@@ -167,7 +167,7 @@ export default function Page() {
                         any of the images.
                     </p>
                 </div>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
                     Feature Maps selection
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
@@ -187,7 +187,7 @@ export default function Page() {
                     images. Findings from this project provide evidence to the contrary, which is probably a reflection of the rate at which 
                     the field of computer vision is advancing. 
                 </p>
-                <h3 className='text-purple-500 text-lg text-center mt-8 font-bold'>
+                <h3 className="text-purple-500 text-lg text-center mt-8 font-bold">
                     Style vs Content scale levels
                 </h3>
                 <div className="flex justify-center">
@@ -204,7 +204,7 @@ export default function Page() {
                         prioritize the color palette, while in latter layers the similarity is more compositional, disregarding the color palette.
                     </p>
                 </div>
-                <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2'>
+                <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 md:mt-8 mb-2">
                     Conclusion
                 </h2>
                 <p className = "text-white text-base md:text-lg mt-4" >
@@ -222,13 +222,13 @@ export default function Page() {
                 </p>
 
                 <div className="flex justify-center w-full mt-4">
-                    <a href='https://github.com/Blistt/vgg-image-retrieval' target='_blank' rel='noopener noreferrer'>
-                        <Image src='/images/githublogo2.png' alt='gan-git' width={85} height={85} />
+                    <a href="https://github.com/Blistt/vgg-image-retrieval" target="_blank" rel="noopener noreferrer">
+                        <Image src="/images/githublogo2.png" alt="gan-git" width={85} height={85} />
                     </a>
                 </div>
                 <div className="flex justify-center w-full">
-                    <p className='text-white text-base md:text-lg ml-4'>
-                    Check out the project's code on GitHub
+                    <p className="text-white text-base md:text-lg ml-4">
+                    Check out the project"s code on GitHub
                     </p>
                 </div>
             

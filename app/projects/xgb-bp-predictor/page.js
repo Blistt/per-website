@@ -1,19 +1,19 @@
 import Navbar from "../../components/Navbar";
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Page() {
     return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
         <Navbar />
         <div className="container mt-24 mx-auto py-4 px-12">
-            <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4'>
+            <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold py-4">
             XGBoost Blood Pressure Predictor
             </h1>
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/3 md:pr-8">
                     <p className="text-white text-base md:text-lg md:mt-20">
                     Blood Pressure (BP) is a crucial indicator of cardiovascular health, and one of the most important vital signs 
-                    monitored by healthcare professionals to assess a patient's overall health. This project uses measures of daily
+                    monitored by healthcare professionals to assess a patient"s overall health. This project uses measures of daily
                     behavior, such as exercise and sleep, collected from smartwatches to predict blood pressure levels and provide
                     personalized recommendations to regulate BP. We use XGBoost regressors to predict daily 
                     systolic and diastolic BP levels for an overall user base, then personalize on an individual level through
@@ -32,7 +32,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                 BP regulation and Machine Learning
             </h2>
             <p className="text-white text-base md:text-lg mt-4">
@@ -47,7 +47,7 @@ export default function Page() {
                 only 6 individuals puts into question whether the model would generalize well to a larger, more diverse population. There are a few 
                 improvements that the 6 years of advancements in Machine Learning since the paper was published have allowed us to make. 
             </p>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-8 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-8 mb-2">
                 Data Collection and Augmentations
             </h2>
             <div className="flex flex-col md:flex-row">
@@ -90,10 +90,10 @@ export default function Page() {
             <p className="text-white text-base md:text-lg mt-4">
                 After experimentation, we found that the KNN intra user imputation strategy yielded the best results in terms of BP prediction error.
             </p>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-8 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-8 mb-2">
                 Our System
             </h2>
-            <h3 className='text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2'>
+            <h3 className="text-white text-xl md:text-2xl font-bold text-left mt-6 mb-2">
                 BP prediction
             </h3>
             <div className="flex flex-col md:flex-row">
@@ -134,24 +134,24 @@ export default function Page() {
             <p className="text-white text-base md:text-lg mt-4">
                 In the original UCSD study, they personalize their system to each user by training an entire model from scratch for each user. This is 
                 feasible in a research setting with a small dataset of 6 individuals, but is not scalable to a larger population, and it is not suitable for a production environment
-                where users won't necessarily be willing to provide months' worth of data before they can receive the personalized recommendations they signed up for.
+                where users won"t necessarily be willing to provide months" worth of data before they can receive the personalized recommendations they signed up for.
                 We solve that through transfer learning: we first train the model on a large dataset of all users, then fine-tune the model on data set apart for each 
                 individual user. This way, despite there only being a few days worth of data for each user, the model can still make accurate predictions informed
                 by its training on a large, diverse sample of users. Then, as the user provides more data, the fine-tuning process will rely less on its base training and 
-                more on the user's own data, thus enhancing personalization.
+                more on the user"s own data, thus enhancing personalization.
             </p>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                 Evaluation
             </h2>
             <p className="text-white text-base md:text-lg mt-4">
-                We use standard error metrics, namely Mean Absolute Error (MAE) and Mean Squared Error (MSE) to evaluate our model's performance. These metrics, particularly MAE,
+                We use standard error metrics, namely Mean Absolute Error (MAE) and Mean Squared Error (MSE) to evaluate our model"s performance. These metrics, particularly MAE,
                 are straightforward measures of the error made by the model in the prediction of BP levels. Our system achieves a MAE of  
                 <span className="text-purple-500 font-bold"> 9.7</span> for systolic BP and <span className="text-purple-500 font-bold"> 6.3 </span> 
-                for diastolic BP. In other words, our model's predictions are off, on average, by 9.7 mmHg for systolic BP and 6.3 mmHg for diastolic BP. 
-                For evaluation purposes, we also implement UCSD's model, with personalized RF regressors, and find that our model outperforms theirs by over 
+                for diastolic BP. In other words, our model"s predictions are off, on average, by 9.7 mmHg for systolic BP and 6.3 mmHg for diastolic BP. 
+                For evaluation purposes, we also implement UCSD"s model, with personalized RF regressors, and find that our model outperforms theirs by over 
                 <span className="text-purple-500 font-bold"> 25% </span> in terms of MAE after averaging for both systolic and diastolic BP.
             </p>
-            <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2'>
+            <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-6 mb-2">
                 Recommendations
             </h2>
             <p className="text-white text-base md:text-lg mt-4">
@@ -160,7 +160,7 @@ export default function Page() {
                 approaches, such as deep learning. XGBoost even provides a built-in feature importance metric, that essentially quantifies how much each input feature 
                 (e.g., sleep minutes, step count) contributes to the final prediction. We use this feature importance to compute the recommended changes a user would
                 need to make to bring their daily BP levels to a desired range. For example, for a given user showing BP levels higher than the desired range of 120-80 mmHg,
-                the system might output the following recommendations for the user's top 3 most important activities:
+                the system might output the following recommendations for the user"s top 3 most important activities:
             </p>
             <table className="text-white mx-auto border border-white mt-6">
                 <thead>
@@ -193,7 +193,7 @@ export default function Page() {
                 33.41 minutes to bring their BP levels to the desired range. Needless to say, UX considerations would probably lead us to round these numbers to nicer,
                 more meaningful values, such as maybe multiples of 15 or 30 minutes for sleep, and 100 for active calories. 
             </p>
-        <h2 className='text-purple-500 text-2xl md:text-3xl font-bold text-left mt-8 mb-2'>
+        <h2 className="text-purple-500 text-2xl md:text-3xl font-bold text-left mt-8 mb-2">
             Conclusion
         </h2>
         <p className="text-white text-base md:text-lg mt-4">
