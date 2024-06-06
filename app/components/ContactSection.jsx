@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const ContactSection = () => {
     return (
@@ -11,7 +12,12 @@ const ContactSection = () => {
                     </p>
                     <a href='https://www.linkedin.com/in/francisco-arriaga-pazos/' target='_blank' rel='noopener noreferrer'
                     className="ml-6">
-                        <img src='/images/linkedin.png' alt='LinkedIn' style={{ width: '45px', height: '45px' }} />
+                        <Image
+                            src='/images/linkedin.png'
+                            alt='linkedin'
+                            width={45}
+                            height={45}
+                        />
                     </a>
                 </div>
             </div>

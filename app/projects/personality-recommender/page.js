@@ -251,7 +251,7 @@ export default function Page() {
 
                 <div className="flex justify-center w-full mt-4">
                     <a href='https://github.com/Blistt/Recommender-System-Personality' target='_blank' rel='noopener noreferrer'>
-                    <img src='/images/githublogo2.png' alt='gan-git' style={{ width: '85px', height: '85px' }} />
+                        <Image src='/images/githublogo2.png' alt='gan-git' width={85} height={85} />
                     </a>
                 </div>
                 <div className="flex justify-center w-full">

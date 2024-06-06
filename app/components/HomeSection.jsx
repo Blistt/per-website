@@ -73,7 +73,11 @@ const HomeSection = () => {
                         <div className='mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-12'>
                             <a className='button py-2 sm:w-fit rounded-full flex justify-center' href='https://github.com/Blistt' target='_blank' rel='noopener noreferrer'>
                                 <button className="sm:w-fit rounded-full flex justify-center">
-                                    <img src="images/githublogo2.png" alt="GitHub Logo" style={{ width: '4.0rem' }} />
+                                    <Image
+                                        src='/images/githublogo2.png'
+                                        alt= 'github'
+                                        width={68}
+                                        height={68} />
                                 </button>
                             </a>
                             <a className='button' href='/documents/FranciscoArriaga-Resume.pdf' download='Francisco_Arriaga_Resume.pdf'>
@@ -90,7 +94,7 @@ const HomeSection = () => {
                     <div className="rounded-full bg-[#181818] w-[250px] h-[250px] relative overflow-hidden">
                         <Image
                             src='/images/fran-clean.png'
-                            alt='hero image'
+                            alt='linkedin'
                             className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
                             width={200}
                             height={200}
