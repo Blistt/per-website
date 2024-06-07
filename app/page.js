@@ -13,7 +13,7 @@ export default function Home() {
         <HomeSection/>
         {/* <ProjectsSection/> */}
         <ContactSection/>
-        <p class="text-center text-gray-400 text-sm mt-8">testo testo testo testo.</p>
+        <p class="text-center text-white text-sm mt-8">testo testo testo testo.</p>
       </div>
     </main>
   );
