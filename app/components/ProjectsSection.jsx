@@ -19,14 +19,14 @@ const ProjectsData =[
     blog: "projects/xgb-bp-predictor",
     git: "https://github.com/Blistt"
   },
-  // {
-  //   id: 3,
-  //   title: "Image Retrieval System",
-  //   description: "Retrieves artistically similar images to a query image using deep learning embeddings.",
-  //   image: "/images/vgg-image-retrieval.png",
-  //   blog: "projects/vgg-image-retrieval",
-  //   git: "https://github.com/Blistt/vgg-image-retrieval"
-  // },
+  {
+    id: 3,
+    title: "Image Retrieval System",
+    description: "Retrieves artistically similar images to a query image using deep learning embeddings.",
+    image: "/images/vgg-image-retrieval.png",
+    blog: "projects/vgg-image-retrieval",
+    git: "https://github.com/Blistt/vgg-image-retrieval"
+  },
   {
     id: 4,
     title: "Radio Music Recommender",
