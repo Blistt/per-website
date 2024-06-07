@@ -35,14 +35,14 @@ const ProjectsData =[
     blog: "projects/music-recommender",
     git: "https://github.com/Blistt/wavebox"
   },
-  // {
-  //   id: 5,
-  //   title: "Personality-based Recommender System",
-  //   description: "Recommends movies and TV shows based on the user\"s personality traits combined with database ratings.",
-  //   image: "/images/personality-rec.png",
-  //   blog: "projects/personality-recommender",
-  //   git: "https://github.com/Blistt/Recommender-System-Personality"
-  // },
+  {
+    id: 5,
+    title: "Personality-based Recommender System",
+    description: "Recommends movies and TV shows based on the user\"s personality traits combined with database ratings.",
+    image: "/images/personality-rec.png",
+    blog: "projects/personality-recommender",
+    git: "https://github.com/Blistt/Recommender-System-Personality"
+  },
   // {
   //   id: 6,
   //   title: "Synopsis-based Books & Movie Recommender",
