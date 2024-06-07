@@ -11,7 +11,7 @@ export default function Home() {
       <Navbar />
       <div class="container mt-24 mx-auto py-4 px-12">
         <HomeSection/>
-        <ProjectsSection/>
+        {/* <ProjectsSection/> */}
         <ContactSection/>
       </div>
     </main>
