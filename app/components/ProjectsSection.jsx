@@ -11,14 +11,14 @@ const ProjectsData =[
     blog: "projects/gan-interpolator",
     git: "https://github.com/Blistt/Animation-GAN-InBetwener"
   },
-  // {
-  //   id: 2,
-  //   title: "XGB Blood Pressure Predictor",
-  //   description: "Predicts blood pressure levels from biometric data (from smartwatches) using XGBoost regressors.",
-  //   image: "/images/xgb-predictor.png",
-  //   blog: "projects/xgb-bp-predictor",
-  //   git: "https://github.com/Blistt"
-  // },
+  {
+    id: 2,
+    title: "XGB Blood Pressure Predictor",
+    description: "Predicts blood pressure levels from biometric data (from smartwatches) using XGBoost regressors.",
+    image: "/images/xgb-predictor.png",
+    blog: "projects/xgb-bp-predictor",
+    git: "https://github.com/Blistt"
+  },
   // {
   //   id: 3,
   //   title: "Image Retrieval System",
