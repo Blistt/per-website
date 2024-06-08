@@ -17,7 +17,7 @@ const ProjectsData =[
     description: "Predicts blood pressure levels from biometric data (from smartwatches) using XGBoost regressors.",
     image: "/images/xgb-predictor.png",
     blog: "projects/xgb-bp-predictor",
-    git: "https://github.com/Blistt"
+    git: "https://github.com/Blistt/bp-regulator"
   },
   {
     id: 3,
@@ -43,8 +43,16 @@ const ProjectsData =[
     blog: "projects/personality-recommender",
     git: "https://github.com/Blistt/Recommender-System-Personality"
   },
+  {
+    id: 6,
+    title: "Portfolio Website",
+    description: "This portfolio website.",
+    image: "/images/per-website.png",
+    blog: "",
+    git: "https://github.com/Blistt/per-website"
+  },
   // {
-  //   id: 6,
+  //   id: 7,
   //   title: "Synopsis-based Books & Movie Recommender",
   //   description: "Recommends books, movies and TV shows based on a query synopsis using classical NLP techniques and LLM embeddings",
   //   image: "/images/synopsis-rec.png",
