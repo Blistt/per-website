@@ -61,7 +61,7 @@ const HomeSection = () => {
                         </span>
                     </h1>
                     <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-                        - AI Developer
+                        - ML/AI Engineer
                     </h1>
                     <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                         <p className="text-white text-base md:text-lg">
