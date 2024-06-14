@@ -93,7 +93,7 @@ const HomeSection = () => {
                 <div className="col-span-5 place-self-center py-6 mt-4 lg:mt-0">
                     <div className="rounded-full bg-[#181818] w-[250px] h-[250px] relative overflow-hidden">
                         <Image
-                            src="/images/fran-clean.png"
+                            src="/images/fran-clean2.png"
                             alt="linkedin"
                             className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             width={200}
