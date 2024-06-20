@@ -60,7 +60,7 @@ export default function Page() {
                 used to create an image retrieval system from pre-trained components. Using a pre-trained CNN model (the VGG-19 network), 
                 the feature maps, that is the outputs of the layers of the network, are pooled and combined to 
                 create the embeddings of the images. It should be noted that the VGG-19 model was developed for the classification of natural 
-                images, i.e., photographs of real-world objects, as opposed to digital illustrations. This project shows that feature embeddings 
+                images, i.e., photographs of real-world objects, as opposed to digital illustrations. Still, this project shows that feature embeddings 
                 obtained using the VGG-19 network can yield successful results in the image retrieval of artistically similar digital illustrations. 
                 </p>
                 <h3 className="text-white text-center mt-8 font-bold">
