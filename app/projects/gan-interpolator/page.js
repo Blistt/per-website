@@ -109,10 +109,10 @@ export default function Page() {
               Training and dataset
             </h2>
             <p className="text-white text-base md:text-lg">
-              We trained our model on a set of 10,000 real animation triplets, obtained from the &apos;link to place&apos;. An animation
-              triplet is merely a sequence of three consecutive frames (F<sub>1</sub>, F<sub>2</sub>, F<sub>3</sub>) in a video.
-              The frames in the dataset are colored, and we need to work from uncolored frames, just as animators in real production
-              scenarios do, so we remove the color using &apos;skethKeras&apos; (link). 
+              We trained our model on a public dataset of 10,000 real animation triplets, the <a href='https://paperswithcode.com/dataset/atd-12k' className='to-blue-400'>ATD-12k</a> dataset. 
+              An animation triplet is merely a sequence of three consecutive frames (F<sub>1</sub>, F<sub>2</sub>, F<sub>3</sub>) in a 
+              video. The frames in the dataset are colored, and we need to work from uncolored frames, just as animators in real 
+              production scenarios do, so we remove the color using <a href='https://github.com/lllyasviel/sketchKeras' className='to-blue-400'>sketchKeras</a>. 
             </p>
             <div className="flex flex-col items-center justify-center w-full py-4">
               <Image
@@ -211,7 +211,8 @@ export default function Page() {
               in-between frames that are visually convincing. We performed some ablations
               and found that leaving the autoencoder on its own leads to a decrease of over 50% in performance, in terms of the perceptual
               metrics used. We are currently working on adding a GAN component to other systems specifically designed for 2D animation 
-              in-betweening, such as the one proposed by (link to paper) and (link to paper). We argue the contributions of the adversarial 
+              in-betweening, such as the one proposed by <a href='https://github.com/ShuhongChen/eisai-anime-interpolator' className='to-blue-400'>Shuhong Chen</a> 
+              or the one proposed by <a href='https://github.com/lisiyao21/AnimeInbet' className='to-blue-400'>Li Siyao</a>. We argue the contributions of the adversarial 
               dymanic will be most noticeable for the triplets where the middle frame it particularly different from the other two frames
               (in terms of topology). 
               <br />
