@@ -34,7 +34,7 @@ const TAB_DATA = [
         content: (
             <ul className="list-disc pl-2 text-white">
                 <li>GAN Specialization - DeepLearning.AI</li>
-                <li>Recommender Systems Specialization - DeepLearning.AI</li>
+                <li>Recommender Systems Specialization - University of Minnesota</li>
                 <li>Deep Learning Specialization - DeepLearning.AI</li>
             </ul>
         )
