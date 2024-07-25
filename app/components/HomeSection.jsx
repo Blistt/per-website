@@ -24,7 +24,7 @@ const TAB_DATA = [
         content: (
             <ul className="list-disc pl-2 text-white">
                 <li>BS in Mathematics & Psychology, University of Texas at El Paso</li>
-                <li>MS in Data and Information Sciences, University of Texas at El Paso</li>
+                <li>MS in Artificial Intelligence, University of Texas at El Paso</li>
             </ul>
         )
     },
