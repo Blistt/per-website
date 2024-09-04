@@ -13,8 +13,9 @@ const TAB_DATA = [
                 <li>Python</li>
                 <li>PyTorch & TensorFlow</li>
                 <li>MySQL</li>
-                <li>Java</li>
-                <li>Next Js</li>
+                <li>Java & C++</li>
+                <li>JavaScript & Next Js</li>
+                <li>Docker & AWS</li>
             </ul>
         )
     },
