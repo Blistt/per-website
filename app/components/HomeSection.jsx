@@ -66,7 +66,7 @@ const HomeSection = () => {
                     </h1>
                     <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                         <p className="text-white text-base md:text-lg">
-                            I&apos;m a Machine Learning/AI Engineer specialized in deep learning for Natural Language Processing (NLP). My work has focused primarily in
+                            I&apos;m a Machine Learning/AI Engineer specialized in deep learning and computer vision. My work has focused primarily in
                             generative modeling and recommender systems. A mixed background in mathematics, psychology, and computer science
                             allows me to approach problems with technical rigor without foregoing explainability. I leverage years of experience 
                             as an academic researcher as well as a Machine Learning contractor and Statistical Research Analyst for industry. 
